@@ -31,8 +31,7 @@ import java.util.Map;
  * A dom name, which comes in different flavours for the various dom node types.
  */
 public final class XmlName implements Name,
-        Comparable<XmlName>,
-        Serializable {
+        Comparable<XmlName> {
 
     private final static Map<String, XmlName> constants = Maps.hash();
 
@@ -147,13 +146,4 @@ public final class XmlName implements Name,
     }
 
     private final static CaseSensitivity CASE_SENSITIVITY = CaseSensitivity.SENSITIVE;
-
-    // Serializable.....................................................................................................
-
-    Object readResolve() {
-        final XmlName constant = constants.get(this.name);
-        return null != constant ? constant : this;
-    }
-
-    private final static long serialVersionUID = 1L;
 }

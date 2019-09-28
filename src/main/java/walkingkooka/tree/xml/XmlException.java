@@ -35,8 +35,4 @@ public class XmlException extends TreeException {
     public XmlException(final String message, final Throwable cause) {
         super(message, cause);
     }
-
-    // Serializable
-
-    private static final long serialVersionUID = 327169759890631100L;
 }
