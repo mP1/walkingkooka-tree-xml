@@ -59,13 +59,6 @@ public final class XmlDocument extends XmlParentNode {
         return this.removeParent0().cast();
     }
 
-    // isX.........................................................................................
-
-    @Override
-    public boolean isDocument() {
-        return true;
-    }
-
     // documentType ...................................................................................................
 
     /**

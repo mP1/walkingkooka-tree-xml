@@ -154,14 +154,6 @@ final public class XmlEntity extends XmlParentNode2 implements HasXmlPublicId, H
         return new XmlEntity(node);
     }
 
-    /**
-     * Always returns true.
-     */
-    @Override
-    public boolean isEntity() {
-        return true;
-    }
-
     @Override
     SearchNode toSearchNode0() {
         return this.toSearchNode1();

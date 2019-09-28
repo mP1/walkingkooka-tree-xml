@@ -90,14 +90,6 @@ final public class XmlProcessingInstruction extends XmlLeafNode implements Value
         return XmlNodeKind.PROCESSING_INSTRUCTION;
     }
 
-    /**
-     * Always returns true.
-     */
-    @Override
-    public boolean isProcessingInstruction() {
-        return true;
-    }
-
     // toSearchNode...............................................................................................
 
     @Override
