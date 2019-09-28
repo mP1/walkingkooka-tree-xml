@@ -60,11 +60,6 @@ final public class XmlCDataSection extends XmlTextNode {
     }
 
     @Override
-    public boolean isCDataSection() {
-        return true;
-    }
-
-    @Override
     final SearchNodeName searchNodeName() {
         return SEARCH_NODE_NAME;
     }

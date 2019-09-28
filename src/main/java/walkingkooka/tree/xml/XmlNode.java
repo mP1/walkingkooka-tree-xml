@@ -349,71 +349,71 @@ public abstract class XmlNode implements walkingkooka.tree.Node<XmlNode, XmlName
     /**
      * Returns this if a {@link XmlCDataSection} .
      */
-    public boolean isCDataSection() {
-        return false;
+    public final boolean isCDataSection() {
+        return this instanceof XmlCDataSection;
     }
 
     /**
      * Returns this if a {@link XmlComment} .
      */
-    public boolean isComment() {
-        return false;
+    public final boolean isComment() {
+        return this instanceof XmlComment;
     }
 
     /**
      * Returns this if a {@link XmlDocument} .
      */
-    public boolean isDocument() {
-        return false;
+    public final boolean isDocument() {
+        return this instanceof XmlDocument;
     }
 
     /**
      * Returns this if a {@link XmlDocumentType} .
      */
-    public boolean isDocumentType() {
-        return false;
+    public final boolean isDocumentType() {
+        return this instanceof XmlDocumentType;
     }
 
     /**
      * Returns this if a {@link XmlElement} .
      */
-    public boolean isElement() {
-        return false;
+    public final boolean isElement() {
+        return this instanceof XmlElement;
     }
 
     /**
      * Returns this if a {@link XmlEntity} .
      */
-    public boolean isEntity() {
-        return false;
+    public final boolean isEntity() {
+        return this instanceof XmlEntity;
     }
 
     /**
      * Returns this if a {@link XmlEntityReference} .
      */
-    public boolean isEntityReference() {
-        return false;
+    public final boolean isEntityReference() {
+        return this instanceof XmlEntityReference;
     }
 
     /**
      * Returns this if a {@link XmlNotation} .
      */
-    public boolean isNotation() {
-        return false;
+    public final boolean isNotation() {
+        return this instanceof XmlNotation;
     }
 
     /**
      * Returns this if a {@link XmlProcessingInstruction} .
      */
-    public boolean isProcessingInstruction() {
-        return false;
+    public final boolean isProcessingInstruction() {
+        return this instanceof XmlProcessingInstruction;
     }
 
     /**
      * Returns this if a {@link XmlText} .
      */
-    public boolean isText() {
-        return false;
+    public final boolean isText() {
+        return this instanceof XmlText;
     }
 
     final <T extends XmlNode> T cast() {

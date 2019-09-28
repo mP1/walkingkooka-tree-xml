@@ -90,11 +90,6 @@ final public class XmlEntityReference extends XmlParentNode2 {
     }
 
     @Override
-    public boolean isEntityReference() {
-        return true;
-    }
-
-    @Override
     SearchNode toSearchNode0() {
         return this.toSearchNode1();
     }

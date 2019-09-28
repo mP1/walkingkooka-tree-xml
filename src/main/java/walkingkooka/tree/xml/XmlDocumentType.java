@@ -130,11 +130,6 @@ public final class XmlDocumentType extends XmlLeafNode implements HasXmlPublicId
         return XmlNodeKind.DOCUMENT_TYPE;
     }
 
-    @Override
-    public boolean isDocumentType() {
-        return true;
-    }
-
     // Node .........................................................................................................
 
     @Override

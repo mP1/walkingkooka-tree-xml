@@ -95,11 +95,6 @@ final public class XmlNotation extends XmlLeafNode implements HasXmlPublicId, Ha
         return XmlNodeKind.NOTATION;
     }
 
-    @Override
-    public boolean isNotation() {
-        return true;
-    }
-
     // toSearchNode...............................................................................................
 
     @Override

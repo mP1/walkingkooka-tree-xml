@@ -169,11 +169,6 @@ public final class XmlElement extends XmlParentNode2 implements HasXmlNameSpaceP
     }
 
     @Override
-    public boolean isElement() {
-        return true;
-    }
-
-    @Override
     final SearchNode toSearchNode0() {
         return this.toSearchNode1().setAttributes(this.attributes().entrySet()
                 .stream()

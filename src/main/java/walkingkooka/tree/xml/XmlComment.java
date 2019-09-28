@@ -62,11 +62,6 @@ final public class XmlComment extends XmlTextNode {
     }
 
     @Override
-    public boolean isComment() {
-        return true;
-    }
-
-    @Override
     final SearchNodeName searchNodeName() {
         return SEARCH_NODE_NAME;
     }
