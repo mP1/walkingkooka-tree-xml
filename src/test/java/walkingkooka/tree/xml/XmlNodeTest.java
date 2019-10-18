@@ -17,10 +17,10 @@
 
 package walkingkooka.tree.xml;
 
-import walkingkooka.test.ClassTesting2;
-import walkingkooka.test.TypeNameTesting;
+import walkingkooka.reflect.ClassTesting2;
+import walkingkooka.reflect.JavaVisibility;
+import walkingkooka.reflect.TypeNameTesting;
 import walkingkooka.tree.Node;
-import walkingkooka.type.JavaVisibility;
 
 public final class XmlNodeTest implements ClassTesting2<XmlNode>, TypeNameTesting<XmlNode> {
 

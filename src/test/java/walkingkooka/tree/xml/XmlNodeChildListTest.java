@@ -21,8 +21,8 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import walkingkooka.Cast;
 import walkingkooka.collect.list.ListTesting2;
-import walkingkooka.test.ClassTesting2;
-import walkingkooka.type.JavaVisibility;
+import walkingkooka.reflect.ClassTesting2;
+import walkingkooka.reflect.JavaVisibility;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;

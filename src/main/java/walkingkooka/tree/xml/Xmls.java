@@ -17,7 +17,7 @@
 
 package walkingkooka.tree.xml;
 
-import walkingkooka.type.PublicStaticHelper;
+import walkingkooka.reflect.PublicStaticHelper;
 
 import java.util.Objects;
 

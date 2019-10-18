@@ -18,7 +18,6 @@
 package walkingkooka.tree.xml;
 
 import walkingkooka.Value;
-import walkingkooka.test.HashCodeEqualsDefined;
 import walkingkooka.text.CharSequences;
 import walkingkooka.tree.search.HasSearchNode;
 import walkingkooka.tree.search.SearchNode;
@@ -28,7 +27,7 @@ import java.util.Optional;
 /**
  * A {@link Value} which is a public id
  */
-final public class XmlPublicId implements Value<String>, HasSearchNode, HashCodeEqualsDefined {
+final public class XmlPublicId implements Value<String>, HasSearchNode {
 
     /**
      * Constant that may be used when no public id is present.

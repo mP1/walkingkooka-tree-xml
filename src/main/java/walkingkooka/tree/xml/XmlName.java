@@ -24,7 +24,6 @@ import walkingkooka.naming.Name;
 import walkingkooka.text.CaseSensitivity;
 import walkingkooka.text.CharSequences;
 
-import java.io.Serializable;
 import java.util.Map;
 
 /**

@@ -17,8 +17,8 @@
 
 package walkingkooka.tree.xml;
 
-import walkingkooka.test.ClassTesting2;
-import walkingkooka.type.JavaVisibility;
+import walkingkooka.reflect.ClassTesting2;
+import walkingkooka.reflect.JavaVisibility;
 
 public final class XmlParentNode2Test implements ClassTesting2<XmlParentNode2> {
     @Override
