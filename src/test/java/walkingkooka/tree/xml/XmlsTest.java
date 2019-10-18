@@ -18,9 +18,9 @@
 package walkingkooka.tree.xml;
 
 import org.junit.jupiter.api.Test;
-import walkingkooka.test.PublicStaticHelperTesting;
+import walkingkooka.reflect.JavaVisibility;
+import walkingkooka.reflect.PublicStaticHelperTesting;
 import walkingkooka.text.CharSequences;
-import walkingkooka.type.JavaVisibility;
 
 import java.lang.reflect.Method;
 

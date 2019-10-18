@@ -18,7 +18,6 @@
 package walkingkooka.tree.xml;
 
 import walkingkooka.Value;
-import walkingkooka.test.HashCodeEqualsDefined;
 import walkingkooka.text.CharSequences;
 import walkingkooka.tree.search.HasSearchNode;
 import walkingkooka.tree.search.SearchNode;
@@ -29,8 +28,7 @@ import java.util.Optional;
  * A {@link Value} which is a system id
  */
 final public class XmlSystemId implements Value<String>,
-        HasSearchNode,
-        HashCodeEqualsDefined {
+        HasSearchNode {
 
     /**
      * Constant that may be used when no system id is present.

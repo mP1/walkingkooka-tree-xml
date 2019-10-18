@@ -25,7 +25,6 @@ import walkingkooka.ToStringBuilderOption;
 import walkingkooka.UsesToStringBuilder;
 import walkingkooka.Value;
 import walkingkooka.naming.Name;
-import walkingkooka.test.HashCodeEqualsDefined;
 import walkingkooka.text.CharacterConstant;
 
 import java.util.Optional;
@@ -33,7 +32,7 @@ import java.util.Optional;
 /**
  * The prefix component of a namespace.
  */
-final public class XmlNameSpacePrefix implements Value<String>, UsesToStringBuilder, HashCodeEqualsDefined {
+final public class XmlNameSpacePrefix implements Value<String>, UsesToStringBuilder {
 
     /**
      * The separator character between a prefix and attribute.
