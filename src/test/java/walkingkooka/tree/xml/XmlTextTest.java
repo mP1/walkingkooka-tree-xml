@@ -29,7 +29,7 @@ public final class XmlTextTest extends XmlTextNodeTestCase<XmlText> {
 
     @Test
     public void testToSearchNode() {
-        this.toSearchNodeAndCheck(SearchNode.text(TEXT, TEXT));
+        this.toSearchNodeAndCheck(SearchNode.text(TEXT, TEXT).setName(XmlText.SEARCH_NODE_NAME));
     }
 
     // toString.....................................................................................................
