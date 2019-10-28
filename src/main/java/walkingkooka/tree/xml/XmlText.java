@@ -72,7 +72,7 @@ public final class XmlText extends XmlTextNode {
         return SEARCH_NODE_NAME;
     }
 
-    private final static SearchNodeName SEARCH_NODE_NAME = SearchNodeName.with("Text");
+    final static SearchNodeName SEARCH_NODE_NAME = SearchNodeName.with("Text");
 
     // Object....................................................................................................
 
