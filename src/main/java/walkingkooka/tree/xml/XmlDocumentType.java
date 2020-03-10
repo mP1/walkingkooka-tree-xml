@@ -33,6 +33,7 @@ import java.util.Optional;
 /**
  * The root node of a document tree.
  */
+@SuppressWarnings("lgtm[java/inconsistent-equals-and-hashcode]")
 public final class XmlDocumentType extends XmlLeafNode implements HasXmlPublicId, HasXmlSystemId {
 
     static XmlDocumentType with(final Node documentType) {

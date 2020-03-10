@@ -37,6 +37,7 @@ import java.util.stream.Collectors;
 /**
  * An immutable element.
  */
+@SuppressWarnings("lgtm[java/inconsistent-equals-and-hashcode]")
 public final class XmlElement extends XmlParentNode2 implements HasXmlNameSpacePrefix {
 
     static XmlElement with(final Node node) {

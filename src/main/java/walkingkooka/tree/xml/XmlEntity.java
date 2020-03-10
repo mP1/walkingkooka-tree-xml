@@ -31,6 +31,7 @@ import java.util.Optional;
 /**
  * A {@link XmlNode} that holds an entityDefinition.
  */
+@SuppressWarnings("lgtm[java/inconsistent-equals-and-hashcode]")
 final public class XmlEntity extends XmlParentNode2 implements HasXmlPublicId, HasXmlSystemId {
 
     public final static String OPEN = "<!ENTITY";

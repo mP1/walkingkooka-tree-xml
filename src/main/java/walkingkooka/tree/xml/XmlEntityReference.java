@@ -34,6 +34,7 @@ import java.util.Map;
  * <!ENTITY entity \"<!--comment-->text\"">
  * </pre>
  */
+@SuppressWarnings("lgtm[java/inconsistent-equals-and-hashcode]")
 final public class XmlEntityReference extends XmlParentNode2 {
 
     public final static String OPEN = "<!ENTITY ";
