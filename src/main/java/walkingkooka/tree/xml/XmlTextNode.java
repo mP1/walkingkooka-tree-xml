@@ -23,6 +23,7 @@ import walkingkooka.tree.search.SearchNode;
 
 import java.util.Objects;
 
+@SuppressWarnings("lgtm[java/inconsistent-equals-and-hashcode]")
 abstract class XmlTextNode extends XmlLeafNode {
 
     XmlTextNode(final Node characterData) {

@@ -37,6 +37,7 @@ import java.util.Optional;
 /**
  * A dom document, that holds nodes such as a doctype, document element and a tree of nodes.
  */
+@SuppressWarnings("lgtm[java/inconsistent-equals-and-hashcode]")
 public final class XmlDocument extends XmlParentNode {
 
     static XmlDocument with(final Node node) {

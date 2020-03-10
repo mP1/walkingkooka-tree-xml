@@ -35,6 +35,7 @@ import java.util.Objects;
  * &lt;?PITARGET DATA?gt;
  * </pre>
  */
+@SuppressWarnings("lgtm[java/inconsistent-equals-and-hashcode]")
 final public class XmlProcessingInstruction extends XmlLeafNode implements Value<String> {
 
     private final static String START = "<?";

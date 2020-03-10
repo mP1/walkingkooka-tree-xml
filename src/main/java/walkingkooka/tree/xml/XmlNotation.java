@@ -37,6 +37,7 @@ import java.util.Optional;
  * <!NOTATION nname SYSTEM url>
  * </pre>
  */
+@SuppressWarnings("lgtm[java/inconsistent-equals-and-hashcode]")
 final public class XmlNotation extends XmlLeafNode implements HasXmlPublicId, HasXmlSystemId {
 
     private final static String START = "<!NOTATION ";
