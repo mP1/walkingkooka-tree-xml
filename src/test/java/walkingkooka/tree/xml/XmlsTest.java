@@ -24,7 +24,6 @@ import walkingkooka.text.CharSequences;
 
 import java.lang.reflect.Method;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 final public class XmlsTest implements PublicStaticHelperTesting<Xmls> {
@@ -69,7 +68,7 @@ final public class XmlsTest implements PublicStaticHelperTesting<Xmls> {
     }
 
     private void decodeAndCheck(final String in, final String expected) {
-        assertEquals(expected, Xmls.decode(in), "Decode " + CharSequences.quote(in));
+        this.checkEquals(expected, Xmls.decode(in), "Decode " + CharSequences.quote(in));
     }
 
     // encode
@@ -105,7 +104,7 @@ final public class XmlsTest implements PublicStaticHelperTesting<Xmls> {
     }
 
     private void encodeAndCheck(final String in, final String expected) {
-        assertEquals(expected, Xmls.encode(in), "encode " + CharSequences.quote(in));
+        this.checkEquals(expected, Xmls.encode(in), "encode " + CharSequences.quote(in));
     }
     // misc
 

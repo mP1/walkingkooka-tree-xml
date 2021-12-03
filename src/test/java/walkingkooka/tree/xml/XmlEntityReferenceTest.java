@@ -26,8 +26,6 @@ import walkingkooka.tree.search.SearchNodeName;
 
 import javax.xml.parsers.DocumentBuilder;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 public final class XmlEntityReferenceTest extends XmlParentNodeTestCase<XmlEntityReference> {
 
     private final static String REFERENCE = "kooka";
@@ -57,8 +55,8 @@ public final class XmlEntityReferenceTest extends XmlParentNodeTestCase<XmlEntit
     public void testW3cEntityReference() {
         final Document document = this.documentBuilder().newDocument();
         final EntityReference reference = document.createEntityReference(REFERENCE);
-        assertEquals(REFERENCE, reference.getNodeName(), "name");
-        assertEquals("", reference.getTextContent(), "text");
+        this.checkEquals(REFERENCE, reference.getNodeName(), "name");
+        this.checkEquals("", reference.getTextContent(), "text");
     }
 
     // helpers............................................................................................
