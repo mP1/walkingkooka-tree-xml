@@ -35,7 +35,6 @@ import java.io.IOException;
 import java.io.StringWriter;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotSame;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -54,7 +53,7 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
     @Test
     public void testCanonicalForm() {
         final XmlDocument document = this.createNode();
-        assertEquals(false, document.canonicalForm(), "canonicalForm"); // horrible
+        this.checkEquals(false, document.canonicalForm(), "canonicalForm"); // horrible
     }
 
     @Test
@@ -69,7 +68,7 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
         final boolean newValue = !document.canonicalForm();
         this.ignoreFeatureNotSupported(() -> {
             final XmlDocument document2 = document.setCanonicalForm(newValue);
-            assertEquals(newValue, document.canonicalForm(), "canonicalForm");
+            this.checkEquals(newValue, document.canonicalForm(), "canonicalForm");
             assertNotSame(document, document2);
         });
     }
@@ -79,7 +78,7 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
     @Test
     public void testCDataSections() {
         final XmlDocument document = this.createNode();
-        assertEquals(true, document.cDataSections(), "cDataSections");
+        this.checkEquals(true, document.cDataSections(), "cDataSections");
     }
 
     @Test
@@ -93,7 +92,7 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
         final XmlDocument document = this.createNode();
         final boolean newValue = !document.cDataSections();
         final XmlDocument document2 = document.setCDataSections(newValue);
-        assertEquals(newValue, document2.cDataSections(), "cdataSections");
+        this.checkEquals(newValue, document2.cDataSections(), "cdataSections");
         assertNotSame(document, document2);
     }
 
@@ -102,7 +101,7 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
     @Test
     public void testCheckCharacterNormalizations() {
         final XmlDocument document = this.createNode();
-        assertEquals(false, document.checkCharacterNormalizations(), "checkCharacterNormalizations");
+        this.checkEquals(false, document.checkCharacterNormalizations(), "checkCharacterNormalizations");
     }
 
     @Test
@@ -117,7 +116,7 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
         final boolean newValue = !document.checkCharacterNormalizations();
         this.ignoreFeatureNotSupported(() -> {
             final XmlDocument document2 = document.setCheckCharacterNormalizations(newValue);
-            assertEquals(newValue, document.checkCharacterNormalizations(), "checkCharacterNormalizations");
+            this.checkEquals(newValue, document.checkCharacterNormalizations(), "checkCharacterNormalizations");
             assertNotSame(document, document2);
         });
     }
@@ -127,7 +126,7 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
     @Test
     public void testComments() {
         final XmlDocument document = this.createNode();
-        assertEquals(true, document.comments(), "comments");
+        this.checkEquals(true, document.comments(), "comments");
     }
 
     @Test
@@ -141,7 +140,7 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
         final XmlDocument document = this.createNode();
         final boolean newValue = !document.comments();
         final XmlDocument document2 = document.setComments(newValue);
-        assertEquals(newValue, document2.comments(), "comments");
+        this.checkEquals(newValue, document2.comments(), "comments");
         assertNotSame(document, document2);
     }
 
@@ -150,7 +149,7 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
     @Test
     public void testDatatypeNormalizations() {
         final XmlDocument document = this.createNode();
-        assertEquals(false, document.datatypeNormalizations(), "datatypeNormalizations");
+        this.checkEquals(false, document.datatypeNormalizations(), "datatypeNormalizations");
     }
 
     @Test
@@ -164,7 +163,7 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
         final XmlDocument document = this.createNode();
         final boolean newValue = !document.datatypeNormalizations();
         final XmlDocument document2 = document.setDatatypeNormalizations(newValue);
-        assertEquals(newValue, document2.datatypeNormalizations(), "datatypeNormalization");
+        this.checkEquals(newValue, document2.datatypeNormalizations(), "datatypeNormalization");
         assertNotSame(document, document2);
     }
 
@@ -173,7 +172,7 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
     @Test
     public void testElementContentWhitespace() {
         final XmlDocument document = this.createNode();
-        assertEquals(false, document.elementContentWhitespace(), "elementContentWhitespace");
+        this.checkEquals(false, document.elementContentWhitespace(), "elementContentWhitespace");
     }
 
     @Test
@@ -187,7 +186,7 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
         final XmlDocument document = this.createNode();
         final boolean newValue = !document.elementContentWhitespace();
         final XmlDocument document2 = document.setElementContentWhitespace(newValue);
-        assertEquals(newValue, document2.elementContentWhitespace(), "elementContentWhitespace");
+        this.checkEquals(newValue, document2.elementContentWhitespace(), "elementContentWhitespace");
         assertNotSame(document, document2);
     }
 
@@ -196,7 +195,7 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
     @Test
     public void testEntities() {
         final XmlDocument document = this.createNode();
-        assertEquals(true, document.entities(), "entities");
+        this.checkEquals(true, document.entities(), "entities");
     }
 
     @Test
@@ -210,7 +209,7 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
         final XmlDocument document = this.createNode();
         final boolean newValue = !document.entities();
         final XmlDocument document2 = document.setEntities(newValue);
-        assertEquals(newValue, document2.entities(), "entities");
+        this.checkEquals(newValue, document2.entities(), "entities");
         assertNotSame(document, document2);
     }
 
@@ -219,7 +218,7 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
     @Test
     public void testErrorHandler() {
         final XmlDocument document = this.createNode();
-        assertEquals(Optional.empty(), document.errorHandler(), "errorHandler");
+        this.checkEquals(Optional.empty(), document.errorHandler(), "errorHandler");
     }
 
     @Test
@@ -233,7 +232,7 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
         final XmlDocument document = this.createNode();
         final Optional<DOMErrorHandler> newHandler = Optional.of((DOMError error) -> true);
         final XmlDocument document2 = document.setErrorHandler(newHandler);
-        assertEquals(newHandler, document2.errorHandler(), "errorHandler");
+        this.checkEquals(newHandler, document2.errorHandler(), "errorHandler");
         assertNotSame(document, document2);
     }
 
@@ -242,7 +241,7 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
     @Test
     public void testInfoset() {
         final XmlDocument document = this.createNode();
-        assertEquals(false, document.infoset(), "infoset");
+        this.checkEquals(false, document.infoset(), "infoset");
     }
 
     @Test
@@ -256,7 +255,7 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
         final XmlDocument document = this.createNode();
         final boolean newValue = !document.infoset();
         final XmlDocument document2 = document.setInfoset(newValue);
-        assertEquals(newValue, document2.infoset(), "infoset");
+        this.checkEquals(newValue, document2.infoset(), "infoset");
         assertNotSame(document, document2);
     }
 
@@ -265,7 +264,7 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
     @Test
     public void testNamespaces() {
         final XmlDocument document = this.createNode();
-        assertEquals(true, document.namespaces(), "namespaces");
+        this.checkEquals(true, document.namespaces(), "namespaces");
     }
 
     @Test
@@ -279,7 +278,7 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
         final XmlDocument document = this.createNode();
         final boolean newValue = !document.namespaces();
         final XmlDocument document2 = document.setNamespaces(newValue);
-        assertEquals(newValue, document2.namespaces(), "namespaces");
+        this.checkEquals(newValue, document2.namespaces(), "namespaces");
         assertNotSame(document, document2);
     }
 
@@ -288,7 +287,7 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
     @Test
     public void testNamespaceDeclaration() {
         final XmlDocument document = this.createNode();
-        assertEquals(true, document.namespaceDeclaration(), "namespaceDeclaration");
+        this.checkEquals(true, document.namespaceDeclaration(), "namespaceDeclaration");
     }
 
     @Test
@@ -302,7 +301,7 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
         final XmlDocument document = this.createNode();
         final boolean newValue = !document.namespaceDeclaration();
         final XmlDocument document2 = document.setNamespaceDeclaration(newValue);
-        assertEquals(newValue, document2.namespaceDeclaration(), "namespaceDeclaration");
+        this.checkEquals(newValue, document2.namespaceDeclaration(), "namespaceDeclaration");
         assertNotSame(document, document2);
     }
 
@@ -311,7 +310,7 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
     @Test
     public void testNormalizeCharacters() {
         final XmlDocument document = this.createNode();
-        assertEquals(false, document.normalizeCharacters(), "normalizeCharacters");
+        this.checkEquals(false, document.normalizeCharacters(), "normalizeCharacters");
     }
 
     @Test
@@ -327,7 +326,7 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
 
         this.ignoreFeatureNotSupported(() -> {
             final XmlDocument document2 = document.setNormalizeCharacters(newValue);
-            assertEquals(newValue, document.normalizeCharacters(), "normalizeCharacters");
+            this.checkEquals(newValue, document.normalizeCharacters(), "normalizeCharacters");
             assertNotSame(document, document2);
         });
     }
@@ -337,7 +336,7 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
     @Test
     public void testSchemaLocation() {
         final XmlDocument document = this.createNode();
-        assertEquals(Optional.empty(), document.schemaLocation(), "schemaLocation");
+        this.checkEquals(Optional.empty(), document.schemaLocation(), "schemaLocation");
     }
 
     @Test
@@ -351,7 +350,7 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
         final XmlDocument document = this.createNode();
         final Optional<String> newValue = Optional.of("http://example.com");
         final XmlDocument document2 = document.setSchemaLocation(newValue);
-        assertEquals(newValue, document2.schemaLocation(), "schemaLocation");
+        this.checkEquals(newValue, document2.schemaLocation(), "schemaLocation");
         assertNotSame(document, document2);
     }
 
@@ -360,7 +359,7 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
     @Test
     public void testSchemaType() {
         final XmlDocument document = this.createNode();
-        assertEquals(Optional.empty(), document.schemaType(), "schemaType");
+        this.checkEquals(Optional.empty(), document.schemaType(), "schemaType");
     }
 
     @Test
@@ -383,7 +382,7 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
     @Test
     public void testSplitCDataSection() {
         final XmlDocument document = this.createNode();
-        assertEquals(true, document.splitCDataSection(), "splitCDataSection");
+        this.checkEquals(true, document.splitCDataSection(), "splitCDataSection");
     }
 
     @Test
@@ -397,7 +396,7 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
         final XmlDocument document = this.createNode();
         final boolean newValue = !document.splitCDataSection();
         final XmlDocument document2 = document.setSplitCDataSection(newValue);
-        assertEquals(newValue, document2.splitCDataSection(), "splitCDataSection");
+        this.checkEquals(newValue, document2.splitCDataSection(), "splitCDataSection");
         assertNotSame(document, document2);
     }
 
@@ -406,7 +405,7 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
     @Test
     public void testValidate() {
         final XmlDocument document = this.createNode();
-        assertEquals(true, document.validate(), "validate");
+        this.checkEquals(true, document.validate(), "validate");
     }
 
     @Test
@@ -420,7 +419,7 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
         final XmlDocument document = this.createNode();
         final boolean newValue = !document.validate();
         final XmlDocument document2 = document.setValidate(newValue);
-        assertEquals(newValue, document2.validate(), "validate");
+        this.checkEquals(newValue, document2.validate(), "validate");
         assertNotSame(document, document2);
     }
 
@@ -429,7 +428,7 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
     @Test
     public void testValidateIfSchema() {
         final XmlDocument document = this.createNode();
-        assertEquals(true, document.validateIfSchema(), "validateIfSchema");
+        this.checkEquals(true, document.validateIfSchema(), "validateIfSchema");
     }
 
     @Test
@@ -443,7 +442,7 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
         final XmlDocument document = this.createNode();
         final boolean newValue = !document.validateIfSchema();
         final XmlDocument document2 = document.setValidateIfSchema(newValue);
-        assertEquals(newValue, document2.validateIfSchema(), "validateIfSchema");
+        this.checkEquals(newValue, document2.validateIfSchema(), "validateIfSchema");
         assertNotSame(document, document2);
     }
 
@@ -452,7 +451,7 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
     @Test
     public void testWellFormed() {
         final XmlDocument document = this.createNode();
-        assertEquals(true, document.wellFormed(), "wellFormed");
+        this.checkEquals(true, document.wellFormed(), "wellFormed");
     }
 
     @Test
@@ -466,7 +465,7 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
         final XmlDocument document = this.createNode();
         final boolean newValue = !document.wellFormed();
         final XmlDocument document2 = document.setWellFormed(newValue);
-        assertEquals(newValue, document2.wellFormed(), "wellFormed");
+        this.checkEquals(newValue, document2.wellFormed(), "wellFormed");
         assertNotSame(document, document2);
     }
 
@@ -475,15 +474,15 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
     @Test
     public void testAppendChild() {
         final XmlDocument document1 = this.createNode();
-        assertEquals(XmlNode.NO_DOCUMENT_TYPE, document1.documentType(), "documentType");
-        assertEquals(XmlNode.NO_ELEMENT, document1.element(), "element");
+        this.checkEquals(XmlNode.NO_DOCUMENT_TYPE, document1.documentType(), "documentType");
+        this.checkEquals(XmlNode.NO_ELEMENT, document1.element(), "element");
         this.checkChildren("document child count", 0, document1);
 
         final XmlElement root = document1.createElement(XmlName.element("child"));
         final XmlDocument document2 = document1.appendChild(root);
 
-        assertEquals(XmlNode.NO_DOCUMENT_TYPE, document2.documentType(), "documentType");
-        assertEquals(Optional.of(document2.children().get(0)), document2.element(), "element");
+        this.checkEquals(XmlNode.NO_DOCUMENT_TYPE, document2.documentType(), "documentType");
+        this.checkEquals(Optional.of(document2.children().get(0)), document2.element(), "element");
         this.checkChildren("document child count", 1, document2);
     }
 
@@ -496,7 +495,7 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
         final XmlDocument document2 = document1.appendChild(child);
 
         final XmlDocument document3 = document2.removeChild(document2.element().get().index());
-        assertEquals(Optional.empty(), document3.element(), "Document should have no element");
+        this.checkEquals(Optional.empty(), document3.element(), "Document should have no element");
     }
 
     // documentelement..............................................................................................
@@ -508,7 +507,7 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
         final XmlElement root1 = document1.createElement(XmlName.element("child"));
         final XmlDocument document2 = document1.appendChild(root1);
 
-        assertEquals(XmlNode.NO_DOCUMENT_TYPE, document2.documentType(), "documentType");
+        this.checkEquals(XmlNode.NO_DOCUMENT_TYPE, document2.documentType(), "documentType");
         final XmlElement root2 = document2.element().get();
         this.checkName(root2, root1.name());
         this.checkChildren("document child count", 1, document2);
@@ -522,8 +521,8 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
         final XmlDocument document2 = document1.setChildren(Lists.of(root1))
                 .setChildren(XmlNode.NO_CHILDREN);
 
-        assertEquals(XmlNode.NO_DOCUMENT_TYPE, document2.documentType(), "documentType");
-        assertEquals(XmlNode.NO_ELEMENT, document2.element(), "element");
+        this.checkEquals(XmlNode.NO_DOCUMENT_TYPE, document2.documentType(), "documentType");
+        this.checkEquals(XmlNode.NO_ELEMENT, document2.element(), "element");
         this.checkChildren("document child count", 0, document2);
     }
 
@@ -539,7 +538,7 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
         final XmlDocument document2 = document1.setChildren(Lists.of(document1.documentType().get()));
 
         this.checkDocumentType(document2.documentType(), PUBLIC_ID, SYSTEM_ID);
-        assertEquals(XmlNode.NO_ELEMENT, document2.element(), "no document element should be present");
+        this.checkEquals(XmlNode.NO_ELEMENT, document2.element(), "no document element should be present");
         this.checkChildren("document child count(doctype)", 1, document2);
     }
 
@@ -609,10 +608,10 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
         this.checkText(text, TEXT);
         this.checkName(document, XmlName.DOCUMENT);
 
-        assertEquals(Optional.empty(), document.documentUri(), "documentUri");
-        assertEquals(Optional.empty(), document.inputEncoding(), "inputEncoding");
-        assertEquals(Optional.empty(), document.xmlEncoding(), "xmlEncoding");
-        assertEquals(Optional.of("1.0"), document.xmlVersion(), "xmlVersion");
+        this.checkEquals(Optional.empty(), document.documentUri(), "documentUri");
+        this.checkEquals(Optional.empty(), document.inputEncoding(), "inputEncoding");
+        this.checkEquals(Optional.empty(), document.xmlEncoding(), "xmlEncoding");
+        this.checkEquals(Optional.of("1.0"), document.xmlVersion(), "xmlVersion");
     }
 
     @Test
@@ -653,8 +652,8 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
         b.setEntityResolver(new EntityResolver() {
             @Override
             public InputSource resolveEntity(final String p, final String s) throws SAXException, IOException {
-                assertEquals("publicId", publicId, p);
-                assertEquals("systemId", systemId, s);
+                checkEquals("publicId", publicId, p);
+                checkEquals("systemId", systemId, s);
 
                 final InputSource inputSource = new InputSource();
                 inputSource.setPublicId(publicId);
@@ -685,8 +684,8 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
     @Test
     public void testDocumentTypeWithout() {
         final XmlDocument document = this.createNode();
-        assertEquals(XmlNode.NO_DOCUMENT_TYPE, document.documentType(), "documentType");
-        assertEquals(XmlNode.NO_ELEMENT, document.element(), "element");
+        this.checkEquals(XmlNode.NO_DOCUMENT_TYPE, document.documentType(), "documentType");
+        this.checkEquals(XmlNode.NO_ELEMENT, document.element(), "element");
         this.checkChildren("document child count", 0, document);
     }
 
@@ -706,7 +705,7 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
     @Test
     public void testElementWithout() {
         final XmlDocument document = this.createNode();
-        assertEquals(XmlDocument.NO_ELEMENT, document.element());
+        this.checkEquals(XmlDocument.NO_ELEMENT, document.element());
     }
 
     @Test
@@ -763,7 +762,7 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
     private void writeXmlAndCheck(final XmlNode node) throws Exception {
         final StringWriter writer = new StringWriter();
         node.document().toXml(TransformerFactory.newInstance().newTransformer(), writer);
-        assertEquals(this.resourceAsText(".xml"), writer.toString());
+        this.checkEquals(this.resourceAsText(".xml"), writer.toString());
     }
 
     // entities...................................................................................................
@@ -773,7 +772,7 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
         final XmlDocument document = this.fromXml(this.documentBuilder(false, false)); //namespace, expandEntities
         final XmlElement root = document.element().get();
         final XmlEntityReference reference = root.children().get(0).cast();
-        assertEquals(XmlName.entityReference("magic"), reference.name(), "entity name");
+        this.checkEquals(XmlName.entityReference("magic"), reference.name(), "entity name");
     }
 
     // children....................................................................................................

@@ -23,7 +23,6 @@ import walkingkooka.tree.search.SearchNodeName;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertSame;
 
 public abstract class XmlParentNodeTestCase<N extends XmlParentNode> extends XmlNodeTestCase<N> {
@@ -48,9 +47,9 @@ public abstract class XmlParentNodeTestCase<N extends XmlParentNode> extends Xml
 
     final void checkChildren(final String label, final int count, final XmlNode parent) {
         if (null != parent.node) {
-            assertEquals(count, parent.node.getChildNodes().getLength(), () -> label + " child node count=" + parent);
+            this.checkEquals(count, parent.node.getChildNodes().getLength(), () -> label + " child node count=" + parent);
         }
-        assertEquals(count, parent.children().size(), () -> label + " child XmlNode count=" + parent);
+        this.checkEquals(count, parent.children().size(), () -> label + " child XmlNode count=" + parent);
 
         final org.w3c.dom.Node parentNode = parent.node;
 
@@ -61,13 +60,13 @@ public abstract class XmlParentNodeTestCase<N extends XmlParentNode> extends Xml
             if (null != parentNode) {
                 assertSame(parentNode, child.node.getParentNode(), "parent node of child is wrong");
             }
-            assertEquals(i, child.index(), "child index=" + child);
+            this.checkEquals(i, child.index(), "child index=" + child);
         }
-        assertEquals(children, parent.children(), "children of " + label);
+        this.checkEquals(children, parent.children(), "children of " + label);
     }
 
     final void checkNotAdopted(final String label, final XmlNode node) {
-        assertEquals(XmlNode.NO_PARENT, node.parent(), label + " should still have no parent");
-        assertEquals(null, node.node.getParentNode(), label + " should still have no parent node");
+        this.checkEquals(XmlNode.NO_PARENT, node.parent(), label + " should still have no parent");
+        this.checkEquals(null, node.node.getParentNode(), label + " should still have no parent node");
     }
 }

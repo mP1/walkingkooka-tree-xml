@@ -47,7 +47,6 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.function.Predicate;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertSame;
 
 public abstract class XmlNodeTestCase<N extends XmlNode> implements ClassTesting2<XmlNode>,
@@ -188,15 +187,15 @@ public abstract class XmlNodeTestCase<N extends XmlNode> implements ClassTesting
     }
 
     final void checkName(final XmlNode node, final XmlName name) {
-        assertEquals(name, node.name(), "name from XmlNode");
+        this.checkEquals(name, node.name(), "name from XmlNode");
         checkName(node, name.value());
     }
 
     final void checkName(final XmlNode node, final String name) {
         if (null != node.node) {
-            assertEquals(name, node.node.getNodeName(), "w3c.dom.Node name");
+            this.checkEquals(name, node.node.getNodeName(), "w3c.dom.Node name");
         }
-        assertEquals(name, node.name().value(), "name from XmlNode");
+        this.checkEquals(name, node.name().value(), "name from XmlNode");
     }
 
     final void checkText(final XmlNode node, final String text) {
@@ -212,7 +211,7 @@ public abstract class XmlNodeTestCase<N extends XmlNode> implements ClassTesting
     }
 
     final void checkPublicId(final HasXmlPublicId has, final Optional<XmlPublicId> publicId) {
-        assertEquals(publicId, has.publicId(), "publicId");
+        this.checkEquals(publicId, has.publicId(), "publicId");
     }
 
     final void checkPublicId(final HasXmlPublicId has, final String publicId) {
@@ -220,7 +219,7 @@ public abstract class XmlNodeTestCase<N extends XmlNode> implements ClassTesting
     }
 
     final void checkSystemId(final HasXmlSystemId has, final Optional<XmlSystemId> systemId) {
-        assertEquals(systemId, has.systemId(), "systemId");
+        this.checkEquals(systemId, has.systemId(), "systemId");
     }
 
     final void checkSystemId(final HasXmlSystemId has, final String systemId) {
@@ -231,7 +230,7 @@ public abstract class XmlNodeTestCase<N extends XmlNode> implements ClassTesting
         final Map<String, String> entities2 = Maps.ordered();
         node.entities().entrySet()
                 .forEach(e -> entities2.put(e.getKey().value(), e.getValue().toString()));
-        assertEquals(entities, entities2, "entities");
+        this.checkEquals(entities, entities2, "entities");
 
         final Set<String> actualRawEntitiesNames = Sets.ordered();
         final org.w3c.dom.DocumentType documentType = node.documentTypeNode();
@@ -244,14 +243,14 @@ public abstract class XmlNodeTestCase<N extends XmlNode> implements ClassTesting
             }
         }
 
-        assertEquals(entities.keySet(), actualRawEntitiesNames, "entities on w3c.dom.Root");
+        this.checkEquals(entities.keySet(), actualRawEntitiesNames, "entities on w3c.dom.Root");
     }
 
     final void checkNotations(final XmlDocumentType node, final Map<String, String> notations) {
         final Map<String, String> notations2 = Maps.ordered();
         node.notations().entrySet()
                 .forEach(e -> notations2.put(e.getKey().value(), e.getValue().toString()));
-        assertEquals(notations, notations2, "notations");
+        this.checkEquals(notations, notations2, "notations");
 
         final Set<String> actualRawNotationsNames = Sets.ordered();
         final org.w3c.dom.DocumentType documentType = node.documentTypeNode();
@@ -264,7 +263,7 @@ public abstract class XmlNodeTestCase<N extends XmlNode> implements ClassTesting
             }
         }
 
-        assertEquals(notations.keySet(), actualRawNotationsNames, "notations on w3c.dom.Root");
+        this.checkEquals(notations.keySet(), actualRawNotationsNames, "notations on w3c.dom.Root");
     }
 
     final Reader resource() throws IOException {
