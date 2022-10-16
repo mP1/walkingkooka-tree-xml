@@ -329,8 +329,9 @@ enum XmlNodeKind {
     };
 
     final XmlName with(final String name) {
-        CharSequences.failIfNullOrEmpty(name, "name");
-        check(name);
+        check(
+                CharSequences.failIfNullOrEmpty(name, "name")
+        );
         return XmlName.with(name, this);
     }
 
