@@ -67,8 +67,7 @@ public final class XmlText extends XmlTextNode {
         return new XmlText(node);
     }
 
-    @Override
-    final SearchNodeName searchNodeName() {
+    @Override SearchNodeName searchNodeName() {
         return SEARCH_NODE_NAME;
     }
 

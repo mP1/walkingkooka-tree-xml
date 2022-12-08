@@ -59,8 +59,7 @@ final public class XmlCDataSection extends XmlTextNode {
         return new XmlCDataSection(node);
     }
 
-    @Override
-    final SearchNodeName searchNodeName() {
+    @Override SearchNodeName searchNodeName() {
         return SEARCH_NODE_NAME;
     }
 

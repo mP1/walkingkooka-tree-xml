@@ -66,7 +66,7 @@ public final class XmlNodeChildListTest implements ClassTesting2<XmlNodeChildLis
     }
 
     @Override
-    public final JavaVisibility typeVisibility() {
+    public JavaVisibility typeVisibility() {
         return JavaVisibility.PACKAGE_PRIVATE;
     }
 }

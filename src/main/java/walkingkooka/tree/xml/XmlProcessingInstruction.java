@@ -77,7 +77,7 @@ final public class XmlProcessingInstruction extends XmlLeafNode implements Value
 
     // XmlNode ......................................................................................
 
-    final ProcessingInstruction processingInstructionNode() {
+    ProcessingInstruction processingInstructionNode() {
         return Cast.to(this.node);
     }
 
@@ -120,8 +120,7 @@ final public class XmlProcessingInstruction extends XmlLeafNode implements Value
         return other instanceof XmlProcessingInstruction;
     }
 
-    @Override
-    final boolean equalsIgnoringParentAndChildren(final XmlNode other) {
+    @Override boolean equalsIgnoringParentAndChildren(final XmlNode other) {
         return this.equalsIgnoringParentAndChildren0(other.cast());
     }
 

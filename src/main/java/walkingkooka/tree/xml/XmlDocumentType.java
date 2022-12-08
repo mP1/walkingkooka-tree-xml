@@ -44,7 +44,7 @@ public final class XmlDocumentType extends XmlLeafNode implements HasXmlPublicId
         super(documentType);
     }
 
-    final org.w3c.dom.DocumentType documentTypeNode() {
+    org.w3c.dom.DocumentType documentTypeNode() {
         return Cast.to(this.node);
     }
 

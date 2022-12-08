@@ -392,20 +392,20 @@ public final class XmlElementTest extends XmlParentNodeTestCase<XmlElement> {
     // toSearchNode.....................................................................................................
 
     @Test
-    public final void testToSearchNodeWithChildren() {
+    public void testToSearchNodeWithChildren() {
         final XmlElement parent = this.createNode();
         final XmlElement child = parent.createElement(XmlName.element("child1"));
         final XmlElement parent2 = parent.appendChild(child);
 
         this.toSearchNodeAndCheck(parent2,
                 SearchNode.sequence(Lists.of(
-                        child.toSearchNode()))
+                                child.toSearchNode()))
 
                         .setName(SearchNodeName.with(PARENT.value())));
     }
 
     @Test
-    public final void testToSearchNodeWithAttributes() {
+    public void testToSearchNodeWithAttributes() {
         final XmlElement element = this.createNode()
                 .setAttributes(ATTRIBUTES_1);
 

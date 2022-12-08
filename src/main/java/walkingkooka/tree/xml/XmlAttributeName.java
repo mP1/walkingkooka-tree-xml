@@ -106,12 +106,12 @@ final public class XmlAttributeName implements Name,
     // Object
 
     @Override
-    public final int hashCode() {
+    public int hashCode() {
         return CASE_SENSITIVITY.hash(this.name);
     }
 
     @Override
-    public final boolean equals(final Object other) {
+    public boolean equals(final Object other) {
         return (this == other) || other instanceof XmlAttributeName && this.equals0((XmlAttributeName) other);
     }
 
