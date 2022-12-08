@@ -71,7 +71,7 @@ final class XmlNodeChildList extends AbstractList<XmlNode> {
      * It scans all children for the first node of the given node type,
      * using an existing wrapper or creating one as necessary.
      */
-    final Optional<XmlNode> getElementByNodeType(final int nodeType) {
+    Optional<XmlNode> getElementByNodeType(final int nodeType) {
         Optional<XmlNode> result = Optional.empty();
 
         // while

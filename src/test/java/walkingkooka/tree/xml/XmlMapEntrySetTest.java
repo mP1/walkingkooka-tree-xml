@@ -63,7 +63,7 @@ public final class XmlMapEntrySetTest implements ClassTesting2<XmlMapEntrySet<Xm
     }
 
     @Override
-    public final JavaVisibility typeVisibility() {
+    public JavaVisibility typeVisibility() {
         return JavaVisibility.PACKAGE_PRIVATE;
     }
 }

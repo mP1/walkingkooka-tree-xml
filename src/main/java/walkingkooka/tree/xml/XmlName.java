@@ -89,17 +89,17 @@ public final class XmlName implements Name,
     private final String name;
     private final XmlNodeKind kind;
 
-    final XmlElement createElement(final Document document) {
+    XmlElement createElement(final Document document) {
         return this.kind.createElement(this, document);
     }
 
-    final XmlElement createElement(final Document document,
-                                   final String namespaceUri,
-                                   final XmlNameSpacePrefix prefix) {
+    XmlElement createElement(final Document document,
+                             final String namespaceUri,
+                             final XmlNameSpacePrefix prefix) {
         return this.kind.createElement(namespaceUri, prefix, this, document);
     }
 
-    final XmlElement failInvalidTagName() {
+    XmlElement failInvalidTagName() {
         throw new IllegalArgumentException("Invalid tag name " + CharSequences.quote(this.value()));
     }
 
