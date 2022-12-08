@@ -17,13 +17,14 @@
 
 package walkingkooka.tree.xml;
 
+import walkingkooka.Cast;
 import walkingkooka.reflect.ClassTesting2;
 import walkingkooka.reflect.JavaVisibility;
 
-public final class XmlMapTest implements ClassTesting2<XmlMap> {
+public final class XmlMapTest implements ClassTesting2<XmlMap<?, ?>> {
     @Override
-    public Class<XmlMap> type() {
-        return XmlMap.class;
+    public Class<XmlMap<?, ?>> type() {
+        return Cast.to(XmlMap.class);
     }
 
     @Override
