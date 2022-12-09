@@ -36,7 +36,7 @@ public final class XmlDocumentTypeTest extends XmlLeafNodeTestCase<XmlDocumentTy
     private final static String TYPE = "type123";
     private final static String PUBLIC_ID_STRING = "//-/publicId";
     private final static Optional<XmlPublicId> PUBLIC_ID = XmlNode.publicId(PUBLIC_ID_STRING);
-    private final static String SYSTEM_ID_STRING = "http://www.example.com/test.dtd";
+    private final static String SYSTEM_ID_STRING = "https://www.example.com/test.dtd";
     private final static Optional<XmlSystemId> SYSTEM_ID = XmlNode.systemId(SYSTEM_ID_STRING);
 
     // create..............................................................................................
@@ -79,7 +79,7 @@ public final class XmlDocumentTypeTest extends XmlLeafNodeTestCase<XmlDocumentTy
     public void testPublicId() throws Exception {
         final XmlDocumentType type = this.documentTypeFromXml();
         this.checkPublicId(type, "-//example/");
-        this.checkSystemId(type, "http://www.example.com/test.dtd");
+        this.checkSystemId(type, "https://www.example.com/test.dtd");
     }
 
     // systemId ...................................................................................................
@@ -110,13 +110,13 @@ public final class XmlDocumentTypeTest extends XmlLeafNodeTestCase<XmlDocumentTy
     @Test
     public void testEntitiesPublicId() throws Exception {
         final XmlDocumentType type = this.documentTypeFromXml();
-        this.checkEntities(type, Maps.of("file", "<!ENTITY file PUBLIC \"//-/PublicId\" \"http://www.example.com/public\">"));
+        this.checkEntities(type, Maps.of("file", "<!ENTITY file PUBLIC \"//-/PublicId\" \"https://www.example.com/public\">"));
     }
 
     @Test
     public void testEntitiesSystemId() throws Exception {
         final XmlDocumentType type = this.documentTypeFromXml();
-        this.checkEntities(type, Maps.of("file", "<!ENTITY file SYSTEM \"http://www.example.com/system\">"));
+        this.checkEntities(type, Maps.of("file", "<!ENTITY file SYSTEM \"https://www.example.com/system\">"));
     }
 
     @Test
@@ -163,7 +163,7 @@ public final class XmlDocumentTypeTest extends XmlLeafNodeTestCase<XmlDocumentTy
 
     @Test
     public void testEqualsSystemIdDifferent() {
-        this.createNode(TYPE, PUBLIC_ID_STRING, "http://www.example.com/different.dtd");
+        this.createNode(TYPE, PUBLIC_ID_STRING, "https://www.example.com/different.dtd");
     }
 
     // toString.....................................................................................................
@@ -171,23 +171,23 @@ public final class XmlDocumentTypeTest extends XmlLeafNodeTestCase<XmlDocumentTy
     @Test
     public void testToString() {
         this.toStringAndCheck(this.createNode(),
-                "<!DOCTYPE type123 PUBLIC \"//-/publicId\" \"http://www.example.com/test.dtd\">");
+                "<!DOCTYPE type123 PUBLIC \"//-/publicId\" \"https://www.example.com/test.dtd\">");
     }
 
     // <!DOCTYPE root PUBLIC "-//example/" "http://www.example.com/test.dtd">
     @Test
     public void testToStringWithinDocument() throws Exception {
-        this.toStringWithinDocumentAndCheck("<!DOCTYPE root PUBLIC \"-//example/\" \"http://www.example.com/test.dtd\">");
+        this.toStringWithinDocumentAndCheck("<!DOCTYPE root PUBLIC \"-//example/\" \"https://www.example.com/test.dtd\">");
     }
 
     @Test
     public void testToStringWithinDocumentEntities() throws Exception {
-        this.toStringWithinDocumentAndCheck("<!DOCTYPE root PUBLIC \"-//example/\" \"http://www.example.com/test.dtd\" [abc <!ENTITY abc> def <!ENTITY def> ghi <!ENTITY ghi>]>");
+        this.toStringWithinDocumentAndCheck("<!DOCTYPE root PUBLIC \"-//example/\" \"https://www.example.com/test.dtd\" [abc <!ENTITY abc> def <!ENTITY def> ghi <!ENTITY ghi>]>");
     }
 
     @Test
     public void testToStringWithinDocumentNotations() throws Exception {
-        this.toStringWithinDocumentAndCheck("<!DOCTYPE root PUBLIC \"-//example/\" \"http://www.example.com/test.dtd\" [abc <!NOTATION abc PUBLIC \"abc viewer\"> def <!NOTATION def PUBLIC \"def viewer\"> ghi <!NOTATION ghi PUBLIC \"ghi viewer\">]>");
+        this.toStringWithinDocumentAndCheck("<!DOCTYPE root PUBLIC \"-//example/\" \"https://www.example.com/test.dtd\" [abc <!NOTATION abc PUBLIC \"abc viewer\"> def <!NOTATION def PUBLIC \"def viewer\"> ghi <!NOTATION ghi PUBLIC \"ghi viewer\">]>");
     }
 
     private void toStringWithinDocumentAndCheck(final String expected) throws Exception {
