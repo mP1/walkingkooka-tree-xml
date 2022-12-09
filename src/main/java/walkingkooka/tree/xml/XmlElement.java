@@ -74,7 +74,11 @@ public final class XmlElement extends XmlParentNode2 implements HasXmlNameSpaceP
 
     private XmlElement replacePrefix(final Optional<XmlNameSpacePrefix> prefix) {
         final Element element = Cast.to(this.nodeCloneAll());
-        element.setPrefix(prefix.map((p)-> p.value()).orElse(null));
+        element.setPrefix(
+                prefix.map(
+                        XmlNameSpacePrefix::value
+                ).orElse(null)
+        );
         return new XmlElement(element);
     }
 
@@ -170,11 +174,16 @@ public final class XmlElement extends XmlParentNode2 implements HasXmlNameSpaceP
     }
 
     @Override SearchNode toSearchNode0() {
-        return this.toSearchNode1().setAttributes(this.attributes().entrySet()
-                .stream()
-                .collect(Collectors.toMap(
-                        e -> SearchNodeAttributeName.with(e.getKey().value()),
-                        e -> e.getValue())));
+        return this.toSearchNode1().setAttributes(
+                this.attributes().entrySet()
+                        .stream()
+                        .collect(
+                                Collectors.toMap(
+                                        e -> SearchNodeAttributeName.with(e.getKey().value()),
+                                        Entry::getValue
+                                )
+                        )
+        );
     }
 
     @Override
