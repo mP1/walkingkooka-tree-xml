@@ -62,9 +62,10 @@ public final class XmlDocumentTypeTest extends XmlLeafNodeTestCase<XmlDocumentTy
         final XmlDocumentType node = this.createNode(TYPE, null, SYSTEM_ID_STRING);
         final XmlNode text = XmlNode.wrap(this.document().createTextNode("text123"));
 
-        assertThrows(UnsupportedOperationException.class, () -> {
-            node.appendChild(text);
-        });
+        assertThrows(
+                UnsupportedOperationException.class,
+                () -> node.appendChild(text)
+        );
     }
 
     // parent..............................................................................................

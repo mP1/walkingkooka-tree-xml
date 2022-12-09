@@ -35,16 +35,18 @@ public final class XmlCommentTest extends XmlTextNodeTestCase<XmlComment> {
 
     @Test
     public void testWithInvalidTextFails() {
-        assertThrows(IllegalArgumentException.class, () -> {
-            this.xmlDocument().createComment("123--456");
-        });
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> this.xmlDocument().createComment("123--456")
+        );
     }
 
     @Test
     public void testSetTextInvalidFails() {
-        assertThrows(IllegalArgumentException.class, () -> {
-            this.createNode().setText("123--456");
-        });
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> this.createNode().setText("123--456")
+        );
     }
 
     // toSearchNode.....................................................................................................

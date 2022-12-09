@@ -149,12 +149,12 @@ public final class XmlDocumentType extends XmlLeafNode implements HasXmlPublicId
     SearchNode toSearchNode0() {
         final List<SearchNode> searchNodes = Lists.array();
 
-        this.publicId.ifPresent((p) -> {
-            searchNodes.add(p.toSearchNode());
-        });
-        this.systemId.ifPresent((s) -> {
-            searchNodes.add(s.toSearchNode());
-        });
+        this.publicId.ifPresent(
+                (p) -> searchNodes.add(p.toSearchNode())
+        );
+        this.systemId.ifPresent(
+                (s) -> searchNodes.add(s.toSearchNode())
+        );
 
         return SearchNode.sequence(searchNodes);
     }
