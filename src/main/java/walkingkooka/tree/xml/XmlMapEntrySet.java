@@ -34,7 +34,7 @@ final class XmlMapEntrySet<K, V> extends AbstractSet<Entry<K, V>> {
     }
 
     static <K, V> XmlMapEntrySet<K, V> with(final XmlMap<K, V> map) {
-        return new XmlMapEntrySet<K, V>(map);
+        return new XmlMapEntrySet<>(map);
     }
 
     private XmlMapEntrySet(final XmlMap<K, V> map) {
