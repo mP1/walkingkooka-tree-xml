@@ -45,7 +45,7 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
     private final static Optional<String> NO_NAMESPACE = Optional.empty();
     private final static XmlName ROOT = XmlName.element("root");
     private final static Optional<XmlPublicId> PUBLIC_ID = XmlNode.publicId("//-/publicId");
-    private final static Optional<XmlSystemId> SYSTEM_ID = XmlNode.systemId("http://www.example.com/test.dtd");
+    private final static Optional<XmlSystemId> SYSTEM_ID = XmlNode.systemId("https://www.example.com/test.dtd");
     private final static String TEXT = "abc123";
 
     // canonical form..............................................................................................
@@ -348,7 +348,7 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
     @Test
     public void testSetSchemaLocationDifferent() {
         final XmlDocument document = this.createNode();
-        final Optional<String> newValue = Optional.of("http://example.com");
+        final Optional<String> newValue = Optional.of("https://example.com");
         final XmlDocument document2 = document.setSchemaLocation(newValue);
         this.checkEquals(newValue, document2.schemaLocation(), "schemaLocation");
         assertNotSame(document, document2);
@@ -823,7 +823,7 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
     public void testToString() throws Exception {
         this.toStringAndCheck(this.fromXml(),
                 "<!--\"cdata-sections\", \"comments\", \"element-content-whitespace\", \"entities\", \"namespaces\", \"namespace-declarations\", \"split-cdata-sections\", \"well-formed\"-->\n" +
-                        "<!DOCTYPE root PUBLIC \"-//example/\" \"http://www.example.com/test.dtd\">\n" +
+                        "<!DOCTYPE root PUBLIC \"-//example/\" \"https://www.example.com/test.dtd\">\n" +
                         "<root>\n" +
                         "     <abc>123</abc> \n" +
                         "</root>");

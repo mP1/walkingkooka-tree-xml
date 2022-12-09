@@ -32,7 +32,7 @@ public final class XmlAttributeMapTest extends XmlMapTestCase<XmlAttributeMap, X
     private final static String ATTRIBUTE2 = "A2";
     private final static String VALUE2 = "V2";
 
-    private final static String NAMESPACEURI = "http://www.example.com";
+    private final static String NAMESPACEURI = "https://www.example.com";
     private final static String PREFIX = "P";
 
     @Test
@@ -79,7 +79,7 @@ public final class XmlAttributeMapTest extends XmlMapTestCase<XmlAttributeMap, X
         final Document document = this.document(true);
 
         final Element element = document.createElementNS("xmlns:n=" + NAMESPACEURI, "element");
-        final Element child = document.createElementNS("xmlns:o=http://example2.com", "element2");
+        final Element child = document.createElementNS("xmlns:o=https://example2.com", "element2");
         element.appendChild(child);
 
         child.setAttributeNode(this.createAttr(document, ATTRIBUTE1, VALUE1));

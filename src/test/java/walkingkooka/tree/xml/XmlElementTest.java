@@ -49,13 +49,13 @@ public final class XmlElementTest extends XmlParentNodeTestCase<XmlElement> {
     private final static String TEXT2 = "text-2";
     private final static String TEXT3 = "text-3";
 
-    private final static String NAMESPACE_URL1 = "http://example.com/namespace1";
+    private final static String NAMESPACE_URL1 = "https://example.com/namespace1";
     private final static XmlNameSpacePrefix PREFIX1 = XmlNode.prefix("ns1");
 
     private final static XmlAttributeName ATTRIBUTE_NAME_DEF1 = XmlNode.XMLNS.attributeName(PREFIX1.value());
     private final static Map<XmlAttributeName, String> ATTRIBUTES_XMLNS1 = Maps.of(ATTRIBUTE_NAME_DEF1, NAMESPACE_URL1);
 
-    private final static String NAMESPACE_URL2 = "http://example.com/namespace2";
+    private final static String NAMESPACE_URL2 = "https://example.com/namespace2";
     private final static XmlNameSpacePrefix PREFIX2 = XmlNode.prefix("ns2");
 
     private final static XmlAttributeName ATTRIBUTE_NAME_DEF2 = XmlNode.XMLNS.attributeName(PREFIX2.value());

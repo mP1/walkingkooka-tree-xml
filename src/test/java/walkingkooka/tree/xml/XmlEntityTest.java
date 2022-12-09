@@ -48,7 +48,7 @@ public final class XmlEntityTest extends XmlParentNodeTestCase<XmlEntity>
 
     @Test
     public void testToString() {
-        this.toStringAndCheck(this.createNode(), "<!ENTITY file SYSTEM \"http://www.example.com/archive.zip\">");
+        this.toStringAndCheck(this.createNode(), "<!ENTITY file SYSTEM \"https://www.example.com/archive.zip\">");
     }
 
     // helpers............................................................................................
