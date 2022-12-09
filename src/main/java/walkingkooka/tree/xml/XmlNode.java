@@ -178,8 +178,8 @@ public abstract class XmlNode implements walkingkooka.tree.Node<XmlNode, XmlName
         final DOMImplementation impl = builder.getDOMImplementation();
         final String typeName = type.value();
         final DocumentType documentType = impl.createDocumentType(typeName,
-                publicId.map(v -> v.value()).orElse(null),
-                systemId.map(v -> v.value()).orElse(null));
+                publicId.map(XmlPublicId::value).orElse(null),
+                systemId.map(XmlSystemId::value).orElse(null));
         return XmlDocument.with(impl.createDocument(namespaceUri.orElse(null),
                 typeName,
                 documentType));

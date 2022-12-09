@@ -96,7 +96,7 @@ abstract class XmlParentNode extends XmlNode {
         return this.children.isEmpty() ?
                 EMPTY_SEARCH_NODE :
                 SearchNode.sequence(this.children.stream()
-                        .map(c -> c.toSearchNode())
+                        .map(XmlNode::toSearchNode)
                         .collect(Collectors.toList()));
     }
 
