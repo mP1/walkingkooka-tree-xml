@@ -567,9 +567,10 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
                 PUBLIC_ID,
                 SYSTEM_ID);
 
-        assertThrows(XmlException.class, () -> {
-            document.setChildren(Lists.empty());
-        });
+        assertThrows(
+                XmlException.class,
+                () -> document.setChildren(Lists.empty())
+        );
     }
 
     // parent..............................................................................................
@@ -783,9 +784,10 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
         final XmlElement element1 = document.createElement(XmlName.element("child1"));
         final XmlElement element2 = document.createElement(XmlName.element("child2"));
 
-        assertThrows(XmlException.class, () -> {
-            document.setChildren(Lists.of(element1, element2));
-        });
+        assertThrows(
+                XmlException.class,
+                () -> document.setChildren(Lists.of(element1, element2))
+        );
     }
 
     // text .........................................................................................................

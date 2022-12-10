@@ -102,13 +102,15 @@ final public class XmlNotation extends XmlLeafNode implements HasXmlPublicId, Ha
     SearchNode toSearchNode0() {
         final List<SearchNode> searchNodes = Lists.array();
 
-        this.publicId().ifPresent((p)-> {
-            searchNodes.add(p.toSearchNode());
-        });
+        this.publicId()
+                .ifPresent(
+                        (p) -> searchNodes.add(p.toSearchNode()
+                        )
+                );
 
-        this.systemId().ifPresent((s)-> {
-            searchNodes.add(s.toSearchNode());
-        });
+        this.systemId().ifPresent(
+                (s) -> searchNodes.add(s.toSearchNode())
+        );
 
         return SearchNode.sequence(searchNodes);
     }

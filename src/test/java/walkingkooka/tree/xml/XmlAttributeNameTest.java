@@ -32,9 +32,10 @@ public final class XmlAttributeNameTest implements ClassTesting2<XmlAttributeNam
 
     @Test
     public void testWithNoPrefixNullFails() {
-        assertThrows(NullPointerException.class, () -> {
-            XmlAttributeName.with("a", null);
-        });
+        assertThrows(
+                NullPointerException.class,
+                () -> XmlAttributeName.with("a", null)
+        );
     }
 
     @Test

@@ -33,9 +33,10 @@ public abstract class XmlTextNodeTestCase<N extends XmlTextNode> extends XmlLeaf
 
     @Test
     public final void testWithNullTextFails() {
-        assertThrows(NullPointerException.class, () -> {
-            this.xmlDocument().createText(null);
-        });
+        assertThrows(
+                NullPointerException.class,
+                () -> this.xmlDocument().createText(null)
+        );
     }
 
     @Test
@@ -45,9 +46,10 @@ public abstract class XmlTextNodeTestCase<N extends XmlTextNode> extends XmlLeaf
 
     @Test
     public final void testSetTextNullFails() {
-        assertThrows(NullPointerException.class, () -> {
-            this.createNode().setText(null);
-        });
+        assertThrows(
+                NullPointerException.class,
+                () -> this.createNode().setText(null)
+        );
     }
 
     @Test

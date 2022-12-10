@@ -108,24 +108,26 @@ public final class XmlElementTest extends XmlParentNodeTestCase<XmlElement> {
 
     @Test
     public void testChildListAddReadOnly() {
-        assertThrows(UnsupportedOperationException.class, () -> {
-            this.appendChildAndCheck().children().add(null);
-
-        });
+        assertThrows(
+                UnsupportedOperationException.class,
+                () -> this.appendChildAndCheck().children().add(null)
+        );
     }
 
     @Test
     public void testChildListSetReadOnly() {
-        assertThrows(UnsupportedOperationException.class, () -> {
-            this.appendChildAndCheck().children().set(0, null);
-        });
+        assertThrows(
+                UnsupportedOperationException.class,
+                () -> this.appendChildAndCheck().children().set(0, null)
+        );
     }
 
     @Test
     public void testChildListRemoveReadOnly() {
-        assertThrows(UnsupportedOperationException.class, () -> {
-            this.appendChildAndCheck().children().remove(0);
-        });
+        assertThrows(
+                UnsupportedOperationException.class,
+                () -> this.appendChildAndCheck().children().remove(0)
+        );
     }
 
     @Test

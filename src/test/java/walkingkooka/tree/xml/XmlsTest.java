@@ -62,9 +62,10 @@ final public class XmlsTest implements PublicStaticHelperTesting<Xmls> {
 
     @Test
     public void testDecodeUnknownEntityFails() {
-        assertThrows(XmlException.class, () -> {
-            Xmls.decode("before &unknown; after");
-        });
+        assertThrows(
+                XmlException.class,
+                () -> Xmls.decode("before &unknown; after")
+        );
     }
 
     private void decodeAndCheck(final String in, final String expected) {

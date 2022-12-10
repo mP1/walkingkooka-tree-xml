@@ -35,16 +35,18 @@ public final class XmlCDataSectionTest extends XmlTextNodeTestCase<XmlCDataSecti
 
     @Test
     public void testWithInvalidTextFails() {
-        assertThrows(IllegalArgumentException.class, () -> {
-            this.xmlDocument().createCDataSection(XmlCDataSection.CLOSE);
-        });
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> this.xmlDocument().createCDataSection(XmlCDataSection.CLOSE)
+        );
     }
 
     @Test
     public void testSetTextInvalidFails() {
-        assertThrows(IllegalArgumentException.class, () -> {
-            this.createNode().setText(XmlCDataSection.CLOSE);
-        });
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> this.createNode().setText(XmlCDataSection.CLOSE)
+        );
     }
 
     // toSearchNode.....................................................................................................
