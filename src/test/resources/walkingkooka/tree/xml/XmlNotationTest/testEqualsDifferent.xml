@@ -3,7 +3,7 @@
                 <!ELEMENT child EMPTY>
                 <!ELEMENT parent (child)>
                 <!ATTLIST parent link ENTITY #REQUIRED>
-                <!ENTITY file SYSTEM "http://www.example.com/archive.zip" NDATA zip>
+                <!ENTITY file SYSTEM "https://www.example.com/archive.zip" NDATA zip>
                 <!NOTATION zip PUBLIC "different">
                 ]>
 <parent link="zip"><child/></parent>
