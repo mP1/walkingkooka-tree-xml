@@ -64,7 +64,12 @@ abstract class XmlLeafNode extends XmlNode {
     @Override
     public final XmlNode setChildren(final List<XmlNode> children) {
         Objects.requireNonNull(children, "children");
-        throw new UnsupportedOperationException();
+
+        if (false == children.isEmpty()) {
+            throw new UnsupportedOperationException();
+        }
+
+        return this;
     }
 
     @Override
