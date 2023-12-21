@@ -30,14 +30,6 @@ public abstract class XmlLeafNodeTestCase<N extends XmlLeafNode> extends XmlNode
     }
 
     @Test
-    public final void testSetChildrenFails() {
-        assertThrows(
-                UnsupportedOperationException.class,
-                () -> this.createNode().setChildren(XmlNode.NO_CHILDREN)
-        );
-    }
-
-    @Test
     public final void testRemoveChildFails() {
         assertThrows(
                 UnsupportedOperationException.class,

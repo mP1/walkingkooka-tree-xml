@@ -26,6 +26,7 @@ import walkingkooka.tree.search.SearchNodeName;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Optional;
 
 /**
@@ -128,7 +129,13 @@ final public class XmlEntity extends XmlParentNode2 implements HasXmlPublicId, H
 
     @Override
     public XmlEntity setChildren(final List<XmlNode> children) {
-        throw new UnsupportedOperationException();
+        Objects.requireNonNull(children, "children");
+
+        if (false == children.isEmpty()) {
+            throw new UnsupportedOperationException();
+        }
+
+        return this;
     }
 
     // attributes......................................................................................................

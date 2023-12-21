@@ -26,6 +26,7 @@ import walkingkooka.tree.search.SearchNodeName;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 /**
  * A {@link XmlNode} that holds an entityDefinition reference.
@@ -62,8 +63,14 @@ final public class XmlEntityReference extends XmlParentNode2 {
     // children................................................................................................
 
     @Override
-    public XmlEntity setChildren(final List<XmlNode> children) {
-        throw new UnsupportedOperationException();
+    public XmlEntityReference setChildren(final List<XmlNode> children) {
+        Objects.requireNonNull(children, "children");
+
+        if (false == children.isEmpty()) {
+            throw new UnsupportedOperationException();
+        }
+
+        return this;
     }
 
     // attributes......................................................................................................
