@@ -323,7 +323,9 @@ public abstract class XmlNodeTestCase<N extends XmlNode> implements ClassTesting
 
     @Override
     public final Predicate<String> isMethodIgnoreMethodFilter() {
-        return (m) -> m.equals("isRoot") || m.equals("parentOrFail");
+        return (m) -> m.equals("isRoot") ||
+                m.equals("parentOrFail") ||
+                m.equals("isEmpty");
     }
 
     // TypeNameTesting.........................................................................................
