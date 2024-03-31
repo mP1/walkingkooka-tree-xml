@@ -204,12 +204,15 @@ public final class XmlElement extends XmlParentNode2 implements HasXmlNameSpaceP
     }
 
     @Override
-    boolean equalsIgnoringParentAndChildren(final XmlNode other) {
-        return equalsIgnoringParentAndChildren0(Cast.to(other));
+    boolean equals0(final XmlNode other) {
+        return equals1(Cast.to(other));
     }
 
-    private boolean equalsIgnoringParentAndChildren0(final XmlElement other) {
-        return this.name().equals(other.name()) && this.attributes().equals(other.attributes());
+    private boolean equals1(final XmlElement other) {
+        // methods rather than fields avoids NPE
+        return this.name().equals(other.name()) &&
+                this.attributes().equals(other.attributes()) &&
+                this.children().equals(other.children());
     }
 
     // UsesToStringBuilder...........................................................................................

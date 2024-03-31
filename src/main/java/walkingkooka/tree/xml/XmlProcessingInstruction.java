@@ -120,11 +120,12 @@ final public class XmlProcessingInstruction extends XmlLeafNode implements Value
         return other instanceof XmlProcessingInstruction;
     }
 
-    @Override boolean equalsIgnoringParentAndChildren(final XmlNode other) {
-        return this.equalsIgnoringParentAndChildren0(other.cast());
+    @Override //
+    boolean equals0(final XmlNode other) {
+        return this.equals1(other.cast());
     }
 
-    private boolean equalsIgnoringParentAndChildren0(final XmlProcessingInstruction other) {
+    private boolean equals1(final XmlProcessingInstruction other) {
         return this.target().equals(other.target()) &&
                 this.data().equals(other.data());
     }

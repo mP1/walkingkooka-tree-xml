@@ -135,11 +135,11 @@ final public class XmlNotation extends XmlLeafNode implements HasXmlPublicId, Ha
     }
 
     @Override
-    boolean equalsIgnoringParentAndChildren(final XmlNode other) {
-        return equalsIgnoringParentAndChildren0(other.cast());
+    boolean equals0(final XmlNode other) {
+        return equals1(other.cast());
     }
 
-    private boolean equalsIgnoringParentAndChildren0(final XmlNotation other) {
+    private boolean equals1(final XmlNotation other) {
         return this.name().equals(other.name()) &&
                 this.publicId().equals(other.publicId()) &&
                 this.systemId().equals(other.systemId());
