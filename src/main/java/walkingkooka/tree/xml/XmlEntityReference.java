@@ -122,7 +122,7 @@ final public class XmlEntityReference extends XmlParentNode2 {
     }
 
     @Override
-    boolean equalsIgnoringParentAndChildren(final XmlNode other) {
+    boolean equals0(final XmlNode other) {
         return this.name().equals(other.name());
     }
 

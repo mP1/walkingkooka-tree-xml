@@ -57,7 +57,9 @@ abstract class XmlParentNode extends XmlNode {
         Objects.requireNonNull(children, "children");
 
         // if the new children are the same (ignoring this as parent) do nothing.
-        return this.equalsDescendants0(children) ? this : this.replaceChildren(children);
+        return this.children.equals(children) ?
+                this :
+                this.replaceChildren(children);
     }
 
     abstract XmlNode replaceChildren(final List<XmlNode> children);

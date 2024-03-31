@@ -54,15 +54,15 @@ abstract class XmlTextNode extends XmlLeafNode {
         return textSearchNode(this.text());
     }
 
-    // Object.................................................................................................
+    // Object..........................................................................................................
 
     @Override
     public final int hashCode() {
         return this.text().hashCode();
     }
 
-    @Override
-    final boolean equalsIgnoringParentAndChildren(final XmlNode other) {
+    @Override //
+    final boolean equals0(final XmlNode other) {
         return this.text().equals(other.text());
     }
 }

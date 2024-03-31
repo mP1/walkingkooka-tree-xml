@@ -583,8 +583,12 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
 
     @Test
     public void testEqualsDifferentRootElement() {
-        this.checkNotEquals(this.createNode().createElement(XmlName.element("root")),
-                this.createNode().createElement(XmlName.element("root2")));
+        this.checkNotEquals(
+                this.createNode()
+                        .createElement(XmlName.element("root")),
+                this.createNode()
+                        .createElement(XmlName.element("root2"))
+        );
     }
 
     @Test

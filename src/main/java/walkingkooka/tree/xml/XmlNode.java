@@ -584,58 +584,7 @@ public abstract class XmlNode implements walkingkooka.tree.Node<XmlNode, XmlName
 
     abstract boolean canBeEqual(final Object other);
 
-    private boolean equals0(final XmlNode other) {
-        return this.equalsAncestors(other) && this.equalsDescendants0(other.children());
-    }
-
-    private boolean equalsAncestors(final XmlNode other) {
-        boolean result = this.equalsIgnoringParentAndChildren(other);
-
-        if (result) {
-            final Optional<XmlNode> parent = this.parent();
-            final Optional<XmlNode> otherParent = other.parent();
-            final boolean hasParent = parent.isPresent();
-            final boolean hasOtherParent = otherParent.isPresent();
-
-            if (hasParent) {
-                if (hasOtherParent) {
-                    result = parent.get().equalsAncestors(otherParent.get());
-                }
-            } else {
-                // result is only true if other is false
-                result = !hasOtherParent;
-            }
-        }
-
-        return result;
-    }
-
-    private boolean equalsDescendants(final XmlNode other) {
-        return this.equalsIgnoringParentAndChildren(other) &&
-                this.equalsDescendants0(other.children());
-    }
-
-    /**
-     * Only returns true if the descendants of this node and the given children are equal ignoring the parents.
-     */
-    final boolean equalsDescendants0(final List<XmlNode> otherChildren) {
-        final List<XmlNode> children = this.children();
-        final int count = children.size();
-        boolean equals = count == otherChildren.size();
-
-        if (equals) {
-            for (int i = 0; equals && i < count; i++) {
-                equals = children.get(i).equalsDescendants(otherChildren.get(i));
-            }
-        }
-
-        return equals;
-    }
-
-    /**
-     * Sub classes should do equals but ignore the parent and children properties.
-     */
-    abstract boolean equalsIgnoringParentAndChildren(final XmlNode other);
+    abstract boolean equals0(final XmlNode other);
 
     // UsesToStringBuilder...........................................................................................
 

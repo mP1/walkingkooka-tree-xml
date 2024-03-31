@@ -179,7 +179,7 @@ public final class XmlDocumentType extends XmlLeafNode implements HasXmlPublicId
     }
 
     @Override
-    boolean equalsIgnoringParentAndChildren(final XmlNode other) {
+    boolean equals0(final XmlNode other) {
         return this.node.isEqualNode(other.node);
     }
 
