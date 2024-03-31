@@ -18,6 +18,7 @@
 package walkingkooka.tree.xml;
 
 import org.w3c.dom.NodeList;
+import walkingkooka.collect.list.Lists;
 import walkingkooka.tree.search.SearchNode;
 
 import java.util.List;
@@ -56,10 +57,10 @@ abstract class XmlParentNode extends XmlNode {
     final XmlNode setChildren0(final List<XmlNode> children) {
         Objects.requireNonNull(children, "children");
 
-        // if the new children are the same (ignoring this as parent) do nothing.
-        return this.children.equals(children) ?
+        final List<XmlNode> copy = Lists.immutable(children);
+        return this.children.equals(copy) ?
                 this :
-                this.replaceChildren(children);
+                this.replaceChildren(copy);
     }
 
     abstract XmlNode replaceChildren(final List<XmlNode> children);
