@@ -20,7 +20,7 @@ package walkingkooka.tree.xml;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import walkingkooka.Cast;
-import walkingkooka.collect.list.ListTesting2;
+import walkingkooka.collect.list.ImmutableListTesting;
 import walkingkooka.reflect.ClassTesting2;
 import walkingkooka.reflect.JavaVisibility;
 
@@ -28,7 +28,7 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 public final class XmlNodeChildListTest implements ClassTesting2<XmlNodeChildList>,
-        ListTesting2<XmlNodeChildList, XmlNode> {
+        ImmutableListTesting<XmlNodeChildList, XmlNode> {
 
     private final static String A1 = "A1";
     private final static String B2 = "B2";
