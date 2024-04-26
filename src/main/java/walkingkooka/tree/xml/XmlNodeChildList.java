@@ -103,13 +103,6 @@ final class XmlNodeChildList extends AbstractList<XmlNode> implements ImmutableL
 
     @Override
     public ImmutableList<XmlNode> setElements(final List<XmlNode> nodes) {
-        final List<XmlNode> copy = Lists.immutable(nodes);
-        return this.equals(copy) ?
-                this :
-                throwUnsupportedOperationException();
-    }
-
-    private static ImmutableList<XmlNode> throwUnsupportedOperationException() {
-        throw new UnsupportedOperationException();
+        return this.setElementsFailIfDifferent(nodes);
     }
 }
