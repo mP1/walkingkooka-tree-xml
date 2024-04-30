@@ -19,6 +19,7 @@ package walkingkooka.tree.xml;
 
 import org.w3c.dom.NodeList;
 import walkingkooka.collect.list.ImmutableList;
+import walkingkooka.collect.list.ImmutableListDefaults;
 import walkingkooka.collect.list.Lists;
 
 import java.util.AbstractList;
@@ -28,7 +29,7 @@ import java.util.Optional;
 /**
  * A read only {@link List} that lazily auto wraps children as they are fetched.
  */
-final class XmlNodeChildList extends AbstractList<XmlNode> implements ImmutableList<XmlNode> {
+final class XmlNodeChildList extends AbstractList<XmlNode> implements ImmutableListDefaults<ImmutableList<XmlNode>, XmlNode> {
 
     static List<XmlNode> wrap(final org.w3c.dom.Node node, final XmlNode parent) {
         final NodeList children = node.getChildNodes();
