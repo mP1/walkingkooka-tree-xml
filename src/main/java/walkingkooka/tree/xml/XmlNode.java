@@ -32,7 +32,7 @@ import walkingkooka.text.CharSequences;
 import walkingkooka.text.HasText;
 import walkingkooka.text.Whitespace;
 import walkingkooka.tree.TraversableHasTextOffset;
-import walkingkooka.tree.expression.FunctionExpressionName;
+import walkingkooka.tree.expression.ExpressionFunctionName;
 import walkingkooka.tree.search.HasSearchNode;
 import walkingkooka.tree.search.SearchNode;
 import walkingkooka.tree.search.SearchNodeName;
@@ -654,7 +654,7 @@ public abstract class XmlNode implements walkingkooka.tree.Node<XmlNode, XmlName
      * Creates a {@link NodeSelector} for {@link XmlNode} from a {@link NodeSelectorExpressionParserToken}.
      */
     public static NodeSelector<XmlNode, XmlName, XmlAttributeName, String> nodeSelectorExpressionParserToken(final NodeSelectorExpressionParserToken token,
-                                                                                                             final Predicate<FunctionExpressionName> functions) {
+                                                                                                             final Predicate<ExpressionFunctionName> functions) {
         return NodeSelector.parserToken(token,
                 n -> XmlName.element(n.value()),
                 functions,
