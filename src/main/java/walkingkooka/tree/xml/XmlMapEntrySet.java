@@ -18,20 +18,17 @@
 package walkingkooka.tree.xml;
 
 import walkingkooka.collect.iterator.Iterators;
-import walkingkooka.collect.set.Sets;
+import walkingkooka.collect.set.ImmutableSetDefaults;
 
 import java.util.AbstractSet;
 import java.util.Iterator;
 import java.util.Map.Entry;
+import java.util.Set;
 
 /**
  * A readonly {@link java.util.Set} view of a {@link XmlMap}
  */
-final class XmlMapEntrySet<K, V> extends AbstractSet<Entry<K, V>> {
-
-    static {
-        Sets.registerImmutableType(XmlMapEntrySet.class);
-    }
+final class XmlMapEntrySet<K, V> extends AbstractSet<Entry<K, V>> implements ImmutableSetDefaults<XmlMapEntrySet<K, V>, Entry<K, V>> {
 
     static <K, V> XmlMapEntrySet<K, V> with(final XmlMap<K, V> map) {
         return new XmlMapEntrySet<>(map);
@@ -52,4 +49,16 @@ final class XmlMapEntrySet<K, V> extends AbstractSet<Entry<K, V>> {
     }
 
     private final XmlMap<K, V> map;
+
+    // ImmutableSet.....................................................................................................
+
+    @Override
+    public XmlMapEntrySet<K, V> setElements(final Set<Entry<K, V>> set) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public Set<Entry<K, V>> toSet() {
+        throw new UnsupportedOperationException();
+    }
 }

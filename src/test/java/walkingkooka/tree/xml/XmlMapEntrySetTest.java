@@ -20,7 +20,7 @@ package walkingkooka.tree.xml;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import walkingkooka.Cast;
-import walkingkooka.collect.set.SetTesting2;
+import walkingkooka.collect.set.ImmutableSetTesting;
 import walkingkooka.reflect.ClassTesting2;
 import walkingkooka.reflect.JavaVisibility;
 
@@ -29,7 +29,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import java.util.Map.Entry;
 
 public final class XmlMapEntrySetTest implements ClassTesting2<XmlMapEntrySet<XmlAttributeName, String>>,
-        SetTesting2<XmlMapEntrySet<XmlAttributeName, String>, Entry<XmlAttributeName, String>> {
+        ImmutableSetTesting<XmlMapEntrySet<XmlAttributeName, String>, Entry<XmlAttributeName, String>> {
 
     @Override
     public XmlMapEntrySet<XmlAttributeName, String> createSet() {
@@ -56,6 +56,20 @@ public final class XmlMapEntrySetTest implements ClassTesting2<XmlMapEntrySet<Xm
             throw new Error(cause);
         }
     }
+
+    // ImmutableSetTesting..............................................................................................
+
+    @Override
+    public void testSetElementsNullFails() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void testSetElementsSame() {
+        throw new UnsupportedOperationException();
+    }
+
+    // class............................................................................................................
 
     @Override
     public Class<XmlMapEntrySet<XmlAttributeName, String>> type() {
