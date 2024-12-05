@@ -44,7 +44,8 @@ enum XmlNodeKind {
         }
 
         @Override
-        void check(final String name) {
+        String checkName(final String name) {
+            return name;
         }
 
         @Override
@@ -73,7 +74,8 @@ enum XmlNodeKind {
         }
 
         @Override
-        void check(final String name) {
+        String checkName(final String name) {
+            return name;
         }
 
         @Override
@@ -102,7 +104,8 @@ enum XmlNodeKind {
         }
 
         @Override
-        void check(final String name) {
+        String checkName(final String name) {
+            return name;
         }
 
         @Override
@@ -131,7 +134,8 @@ enum XmlNodeKind {
         }
 
         @Override
-        void check(final String name) {
+        String checkName(final String name) {
+            return name;
         }
 
         @Override
@@ -161,8 +165,12 @@ enum XmlNodeKind {
         }
 
         @Override
-        void check(final String name) {
-            //Predicates.failIfNullOrFalse(name, DomPredicates.elementName(), "elementNode name %s");
+        String checkName(final String name) {
+            //DomPredicates.elementName().failIfNullOrFalse(
+            //  "name"
+            //  name
+            // );
+            return name;
         }
 
         @Override
@@ -192,8 +200,8 @@ enum XmlNodeKind {
         }
 
         @Override
-        void check(final String name) {
-            Objects.requireNonNull(name, "name");
+        String checkName(final String name) {
+            return Objects.requireNonNull(name, "name");
         }
 
         @Override
@@ -223,8 +231,8 @@ enum XmlNodeKind {
         }
 
         @Override
-        void check(final String name) {
-            Objects.requireNonNull(name, "name");
+        String checkName(final String name) {
+            return Objects.requireNonNull(name, "name");
         }
 
         @Override
@@ -253,8 +261,13 @@ enum XmlNodeKind {
         }
 
         @Override
-        void check(final String name) {
-            //Predicates.failIfNullOrFalse(name, DomPredicates.notation(), "notation name %s");
+        String checkName(final String name) {
+            //DomPredicates.notation()
+            //  .failIfNullOrFalse(
+            //   "name"
+            //    name
+            //  );
+            return name;
         }
 
         @Override
@@ -283,8 +296,8 @@ enum XmlNodeKind {
         }
 
         @Override
-        void check(final String name) {
-            // nop
+        String checkName(final String name) {
+            return name;
         }
 
         @Override
@@ -314,7 +327,8 @@ enum XmlNodeKind {
         }
 
         @Override
-        void check(final String name) {
+        String checkName(final String name) {
+            return name;
         }
 
         @Override
@@ -329,13 +343,13 @@ enum XmlNodeKind {
     };
 
     final XmlName with(final String name) {
-        check(
+        checkName(
                 CharSequences.failIfNullOrEmpty(name, "name")
         );
         return XmlName.with(name, this);
     }
 
-    abstract void check(final String name);
+    abstract String checkName(final String name);
 
     abstract XmlElement createElement(final XmlName name, final Document document);
 
