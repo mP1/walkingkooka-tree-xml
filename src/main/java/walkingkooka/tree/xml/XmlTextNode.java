@@ -49,8 +49,7 @@ abstract class XmlTextNode extends XmlLeafNode {
 
     // toSearchNode...............................................................................................
 
-    @Override
-    final SearchNode toSearchNode0() {
+    @Override final SearchNode toSearchNode0() {
         return textSearchNode(this.text());
     }
 
