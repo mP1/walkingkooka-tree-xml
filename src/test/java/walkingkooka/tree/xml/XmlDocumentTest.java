@@ -668,10 +668,10 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
             }
         });
         final XmlDocument document = XmlNode.createDocument(b,
-                XmlNode.NO_NAMESPACE_URI,
-                XmlName.element("date"),
-                XmlNode.publicId(publicId),
-                XmlNode.systemId(systemId))
+                        XmlNode.NO_NAMESPACE_URI,
+                        XmlName.element("date"),
+                        XmlNode.publicId(publicId),
+                        XmlNode.systemId(systemId))
                 .setValidate(true);
 
         final XmlElement day = document.createElement(XmlName.element("day"))

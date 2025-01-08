@@ -37,8 +37,7 @@ public abstract class XmlLeafNodeTestCase<N extends XmlLeafNode> extends XmlNode
         );
     }
 
-    @Override
-    final N createNode(final DocumentBuilder builder) {
+    @Override final N createNode(final DocumentBuilder builder) {
         return this.createNode(builder.newDocument());
     }
 }

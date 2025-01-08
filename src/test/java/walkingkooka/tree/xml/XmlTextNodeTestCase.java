@@ -97,8 +97,7 @@ public abstract class XmlTextNodeTestCase<N extends XmlTextNode> extends XmlLeaf
         return this.createNode(this.documentBuilder().newDocument(), text);
     }
 
-    @Override
-    final N createNode(final Document document) {
+    @Override final N createNode(final Document document) {
         return this.createNode(document, this.text());
     }
 

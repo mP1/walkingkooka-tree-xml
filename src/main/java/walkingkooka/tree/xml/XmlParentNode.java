@@ -40,8 +40,7 @@ abstract class XmlParentNode extends XmlNode {
 
     // parent................................................................................................
 
-    @Override
-    final XmlNode removeParent1() {
+    @Override final XmlNode removeParent1() {
         return this.wrap0(this.nodeCloneWithoutParentWithChildren());
     }
 
