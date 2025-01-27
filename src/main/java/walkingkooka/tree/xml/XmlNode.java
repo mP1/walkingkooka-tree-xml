@@ -37,7 +37,7 @@ import walkingkooka.tree.search.HasSearchNode;
 import walkingkooka.tree.search.SearchNode;
 import walkingkooka.tree.search.SearchNodeName;
 import walkingkooka.tree.select.NodeSelector;
-import walkingkooka.tree.select.parser.NodeSelectorExpressionParserToken;
+import walkingkooka.tree.select.parser.ExpressionNodeSelectorParserToken;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.transform.Transformer;
@@ -650,9 +650,9 @@ public abstract class XmlNode implements walkingkooka.tree.Node<XmlNode, XmlName
     }
 
     /**
-     * Creates a {@link NodeSelector} for {@link XmlNode} from a {@link NodeSelectorExpressionParserToken}.
+     * Creates a {@link NodeSelector} for {@link XmlNode} from a {@link ExpressionNodeSelectorParserToken}.
      */
-    public static NodeSelector<XmlNode, XmlName, XmlAttributeName, String> nodeSelectorExpressionParserToken(final NodeSelectorExpressionParserToken token,
+    public static NodeSelector<XmlNode, XmlName, XmlAttributeName, String> nodeSelectorExpressionParserToken(final ExpressionNodeSelectorParserToken token,
                                                                                                              final Predicate<ExpressionFunctionName> functions) {
         return NodeSelector.parserToken(token,
                 n -> XmlName.element(n.value()),
