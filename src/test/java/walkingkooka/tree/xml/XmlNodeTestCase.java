@@ -312,20 +312,19 @@ public abstract class XmlNodeTestCase<N extends XmlNode> implements ClassTesting
     }
 
     @Override
-    public final String isMethodTypeNamePrefix() {
-        return "Xml";
-    }
-
-    @Override
-    public final String isMethodTypeNameSuffix() {
-        return "";
-    }
-
-    @Override
     public final Predicate<String> isMethodIgnoreMethodFilter() {
         return (m) -> m.equals("isRoot") ||
                 m.equals("parentOrFail") ||
                 m.equals("isEmpty");
+    }
+
+    @Override
+    public String toIsMethodName(final String typeName) {
+        return this.toIsMethodNameWithPrefixSuffix(
+                typeName,
+                "Xml",
+                ""// suffix
+        );
     }
 
     // TypeNameTesting.........................................................................................
