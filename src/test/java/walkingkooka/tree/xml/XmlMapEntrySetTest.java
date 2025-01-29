@@ -69,6 +69,11 @@ public final class XmlMapEntrySetTest implements ClassTesting2<XmlMapEntrySet<Xm
         throw new UnsupportedOperationException();
     }
 
+    @Override
+    public void testDeleteIfWithNeverPredicate() {
+        throw new UnsupportedOperationException();
+    }
+
     // class............................................................................................................
 
     @Override
