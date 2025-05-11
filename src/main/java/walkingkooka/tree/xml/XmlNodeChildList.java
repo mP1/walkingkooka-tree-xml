@@ -24,6 +24,7 @@ import walkingkooka.collect.list.Lists;
 
 import java.util.AbstractList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 /**
@@ -97,6 +98,11 @@ final class XmlNodeChildList extends AbstractList<XmlNode> implements ImmutableL
     }
 
     // ImmutableList....................................................................................................
+
+    @Override
+    public void elementCheck(final XmlNode node) {
+        Objects.requireNonNull(node, "node");
+    }
 
     @Override
     public ImmutableList<XmlNode> setElements(final List<XmlNode> nodes) {
