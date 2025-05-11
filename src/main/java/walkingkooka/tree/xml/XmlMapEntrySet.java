@@ -53,6 +53,11 @@ final class XmlMapEntrySet<K, V> extends AbstractSet<Entry<K, V>> implements Imm
     // ImmutableSet.....................................................................................................
 
     @Override
+    public void elementCheck(final Entry<K, V> element) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
     public XmlMapEntrySet<K, V> setElements(final Set<Entry<K, V>> set) {
         throw new UnsupportedOperationException();
     }
