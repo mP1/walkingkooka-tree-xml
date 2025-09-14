@@ -23,6 +23,7 @@ import walkingkooka.collect.list.ImmutableListDefaults;
 import walkingkooka.collect.list.Lists;
 
 import java.util.AbstractList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -105,7 +106,7 @@ final class XmlNodeChildList extends AbstractList<XmlNode> implements ImmutableL
     }
 
     @Override
-    public ImmutableList<XmlNode> setElements(final List<XmlNode> nodes) {
+    public ImmutableList<XmlNode> setElements(final Collection<XmlNode> nodes) {
         return this.setElementsFailIfDifferent(nodes);
     }
 }
