@@ -21,6 +21,7 @@ import walkingkooka.collect.iterator.Iterators;
 import walkingkooka.collect.set.ImmutableSetDefaults;
 
 import java.util.AbstractSet;
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.Map.Entry;
 import java.util.Set;
@@ -58,7 +59,7 @@ final class XmlMapEntrySet<K, V> extends AbstractSet<Entry<K, V>> implements Imm
     }
 
     @Override
-    public XmlMapEntrySet<K, V> setElements(final Set<Entry<K, V>> set) {
+    public XmlMapEntrySet<K, V> setElements(final Collection<Entry<K, V>> set) {
         throw new UnsupportedOperationException();
     }
 
