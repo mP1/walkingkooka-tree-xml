@@ -26,8 +26,6 @@ import walkingkooka.Cast;
 import walkingkooka.ToStringBuilder;
 import walkingkooka.ToStringBuilderOption;
 import walkingkooka.text.LineEnding;
-import walkingkooka.tree.search.SearchNode;
-import walkingkooka.tree.search.SearchNodeName;
 
 import java.util.List;
 import java.util.Map;
@@ -551,19 +549,6 @@ public final class XmlDocument extends XmlParentNode {
     public Optional<XmlNode> nextSibling() {
         return Optional.empty();
     }
-
-    // toSearchNode...............................................................................................
-
-    @Override SearchNode toSearchNode0() {
-        return this.toSearchNode1();
-    }
-
-    @Override
-    SearchNodeName searchNodeName() {
-        return SEARCH_NODE_NAME;
-    }
-
-    private final static SearchNodeName SEARCH_NODE_NAME = SearchNodeName.with("Document");
 
     // Object...............................................................................................
 

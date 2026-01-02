@@ -21,11 +21,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.Notation;
 import walkingkooka.Cast;
 import walkingkooka.ToStringBuilder;
-import walkingkooka.collect.list.Lists;
-import walkingkooka.tree.search.SearchNode;
-import walkingkooka.tree.search.SearchNodeName;
 
-import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
@@ -95,32 +91,6 @@ final public class XmlNotation extends XmlLeafNode implements HasXmlPublicId, Ha
     XmlNodeKind kind() {
         return XmlNodeKind.NOTATION;
     }
-
-    // toSearchNode...............................................................................................
-
-    @Override
-    SearchNode toSearchNode0() {
-        final List<SearchNode> searchNodes = Lists.array();
-
-        this.publicId()
-                .ifPresent(
-                        (p) -> searchNodes.add(p.toSearchNode()
-                        )
-                );
-
-        this.systemId().ifPresent(
-                (s) -> searchNodes.add(s.toSearchNode())
-        );
-
-        return SearchNode.sequence(searchNodes);
-    }
-
-    @Override
-    SearchNodeName searchNodeName() {
-        return SEARCH_NODE_NAME;
-    }
-
-    private final static SearchNodeName SEARCH_NODE_NAME = SearchNodeName.with("Notation");
 
     // Object...............................................................................................
 

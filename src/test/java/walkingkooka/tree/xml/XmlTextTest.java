@@ -19,18 +19,10 @@ package walkingkooka.tree.xml;
 
 import org.junit.jupiter.api.Test;
 import org.w3c.dom.Document;
-import walkingkooka.tree.search.SearchNode;
 
 public final class XmlTextTest extends XmlTextNodeTestCase<XmlText> {
 
     private final static String TEXT = "abc123";
-
-    // toSearchNode.....................................................................................................
-
-    @Test
-    public void testToSearchNode() {
-        this.toSearchNodeAndCheck(SearchNode.text(TEXT, TEXT).setName(XmlText.SEARCH_NODE_NAME));
-    }
 
     // toString.....................................................................................................
 

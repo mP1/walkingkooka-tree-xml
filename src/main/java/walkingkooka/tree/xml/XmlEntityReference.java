@@ -21,8 +21,6 @@ import org.w3c.dom.EntityReference;
 import org.w3c.dom.Node;
 import walkingkooka.Cast;
 import walkingkooka.ToStringBuilder;
-import walkingkooka.tree.search.SearchNode;
-import walkingkooka.tree.search.SearchNodeName;
 
 import java.util.List;
 import java.util.Map;
@@ -96,18 +94,6 @@ final public class XmlEntityReference extends XmlParentNode2 {
     XmlEntityReference wrap0(final Node node) {
         return new XmlEntityReference(node);
     }
-
-    @Override
-    SearchNode toSearchNode0() {
-        return this.toSearchNode1();
-    }
-
-    @Override
-    SearchNodeName searchNodeName() {
-        return SEARCH_NODE_NAME;
-    }
-
-    private final static SearchNodeName SEARCH_NODE_NAME = SearchNodeName.with("EntityReference");
 
     // Object ...............................................................................................
 

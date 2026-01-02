@@ -19,7 +19,6 @@ package walkingkooka.tree.xml;
 
 import org.w3c.dom.Node;
 import walkingkooka.ToStringBuilder;
-import walkingkooka.tree.search.SearchNodeName;
 
 /**
  * A {@link XmlNode} that holds a comment.
@@ -60,12 +59,6 @@ final public class XmlComment extends XmlTextNode {
     XmlComment wrap0(final Node node) {
         return new XmlComment(node);
     }
-
-    @Override SearchNodeName searchNodeName() {
-        return SEARCH_NODE_NAME;
-    }
-
-    private final static SearchNodeName SEARCH_NODE_NAME = SearchNodeName.with("Comment");
 
     // Object...........................................................................................
 

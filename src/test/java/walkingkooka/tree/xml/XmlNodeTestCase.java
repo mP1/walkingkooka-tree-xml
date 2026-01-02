@@ -33,8 +33,6 @@ import walkingkooka.text.HasTextLengthTesting;
 import walkingkooka.text.HasTextTesting;
 import walkingkooka.tree.HasTextOffsetTesting;
 import walkingkooka.tree.NodeTesting;
-import walkingkooka.tree.search.HasSearchNodeTesting;
-import walkingkooka.tree.search.SearchNode;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -50,7 +48,6 @@ import java.util.function.Predicate;
 import static org.junit.jupiter.api.Assertions.assertSame;
 
 public abstract class XmlNodeTestCase<N extends XmlNode> implements ClassTesting2<XmlNode>,
-        HasSearchNodeTesting<N>,
         HasTextTesting,
         HasTextLengthTesting,
         HasTextOffsetTesting,
@@ -291,10 +288,6 @@ public abstract class XmlNodeTestCase<N extends XmlNode> implements ClassTesting
                 return writer.toString();
             }
         }
-    }
-
-    final void toSearchNodeAndCheck(final SearchNode searchNode) {
-        this.toSearchNodeAndCheck(this.createNode(), searchNode);
     }
 
     @Override

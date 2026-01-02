@@ -19,9 +19,6 @@ package walkingkooka.tree.xml;
 
 import org.junit.jupiter.api.Test;
 import org.w3c.dom.Document;
-import walkingkooka.collect.list.Lists;
-import walkingkooka.tree.search.SearchNode;
-import walkingkooka.tree.search.SearchNodeName;
 
 public final class XmlProcessingInstructionTest extends XmlLeafNodeTestCase<XmlProcessingInstruction> {
 
@@ -49,19 +46,6 @@ public final class XmlProcessingInstructionTest extends XmlLeafNodeTestCase<XmlP
                                                 final String target,
                                                 final String processingInstruction) {
         return XmlProcessingInstruction.with(document.createProcessingInstruction(target, processingInstruction));
-    }
-
-    // toSearchNode.....................................................................................................
-
-    @Test
-    public void testToSearchNode() {
-        final XmlProcessingInstruction pi = this.createNode();
-
-        this.toSearchNodeAndCheck(pi,
-                SearchNode.sequence(Lists.of(
-                        SearchNode.text(TARGET, TARGET),
-                        SearchNode.text(PROCESSING_INSTRUCTION, PROCESSING_INSTRUCTION)
-                )).setName(SearchNodeName.with("ProcessingInstruction")));
     }
 
     // toString.....................................................................................................

@@ -26,7 +26,6 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import walkingkooka.collect.list.Lists;
 import walkingkooka.test.ResourceTesting;
-import walkingkooka.tree.search.SearchNodeName;
 import walkingkooka.tree.select.NodeSelector;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -850,11 +849,6 @@ public final class XmlDocumentTest extends XmlParentNodeTestCase<XmlDocument>
     @Override
     String text() {
         return "";
-    }
-
-    @Override
-    SearchNodeName searchNodeName() {
-        return SearchNodeName.with("Document");
     }
 
     @Override

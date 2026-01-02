@@ -18,7 +18,6 @@
 package walkingkooka.tree.xml;
 
 import walkingkooka.ToStringBuilder;
-import walkingkooka.tree.search.SearchNodeName;
 
 /**
  * A {@link XmlNode} that holds a CDATA section.
@@ -58,12 +57,6 @@ final public class XmlCDataSection extends XmlTextNode {
     XmlCDataSection wrap0(final org.w3c.dom.Node node) {
         return new XmlCDataSection(node);
     }
-
-    @Override SearchNodeName searchNodeName() {
-        return SEARCH_NODE_NAME;
-    }
-
-    private final static SearchNodeName SEARCH_NODE_NAME = SearchNodeName.with("CData");
 
     // Object...........................................................................................
 

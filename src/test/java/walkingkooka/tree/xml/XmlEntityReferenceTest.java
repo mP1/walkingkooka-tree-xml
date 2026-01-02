@@ -22,7 +22,6 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.EntityReference;
 import walkingkooka.Cast;
-import walkingkooka.tree.search.SearchNodeName;
 
 import javax.xml.parsers.DocumentBuilder;
 
@@ -74,11 +73,6 @@ public final class XmlEntityReferenceTest extends XmlParentNodeTestCase<XmlEntit
     @Override
     String text() {
         return "";
-    }
-
-    @Override
-    SearchNodeName searchNodeName() {
-        return SearchNodeName.with("EntityReference");
     }
 
     @Override
