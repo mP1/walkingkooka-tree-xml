@@ -22,9 +22,6 @@ import org.w3c.dom.ProcessingInstruction;
 import walkingkooka.Cast;
 import walkingkooka.ToStringBuilder;
 import walkingkooka.Value;
-import walkingkooka.collect.list.Lists;
-import walkingkooka.tree.search.SearchNode;
-import walkingkooka.tree.search.SearchNodeName;
 
 import java.util.Objects;
 
@@ -90,23 +87,6 @@ final public class XmlProcessingInstruction extends XmlLeafNode implements Value
     XmlNodeKind kind() {
         return XmlNodeKind.PROCESSING_INSTRUCTION;
     }
-
-    // toSearchNode...............................................................................................
-
-    @Override
-    SearchNode toSearchNode0() {
-        return SearchNode.sequence(Lists.of(
-                textSearchNode(this.target()),
-                textSearchNode(this.data())
-        ));
-    }
-
-    @Override
-    SearchNodeName searchNodeName() {
-        return SEARCH_NODE_NAME;
-    }
-
-    private final static SearchNodeName SEARCH_NODE_NAME = SearchNodeName.with("ProcessingInstruction");
 
     // Object ...........................................................................................
 

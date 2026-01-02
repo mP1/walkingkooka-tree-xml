@@ -19,7 +19,6 @@ package walkingkooka.tree.xml;
 
 import org.w3c.dom.Node;
 import walkingkooka.Cast;
-import walkingkooka.tree.search.SearchNode;
 
 import java.util.Objects;
 
@@ -45,12 +44,6 @@ abstract class XmlTextNode extends XmlLeafNode {
         final org.w3c.dom.CharacterData characterData = Cast.to(this.nodeCloneAll());
         characterData.setTextContent(text);
         return this.wrap0(characterData);
-    }
-
-    // toSearchNode...............................................................................................
-
-    @Override final SearchNode toSearchNode0() {
-        return textSearchNode(this.text());
     }
 
     // Object..........................................................................................................

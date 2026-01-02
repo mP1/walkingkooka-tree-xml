@@ -33,9 +33,6 @@ import walkingkooka.text.HasText;
 import walkingkooka.text.Whitespace;
 import walkingkooka.tree.TraversableHasTextOffset;
 import walkingkooka.tree.expression.ExpressionFunctionName;
-import walkingkooka.tree.search.HasSearchNode;
-import walkingkooka.tree.search.SearchNode;
-import walkingkooka.tree.search.SearchNodeName;
 import walkingkooka.tree.select.NodeSelector;
 import walkingkooka.tree.select.parser.ExpressionNodeSelectorParserToken;
 
@@ -60,7 +57,6 @@ import java.util.function.Predicate;
  * changing attributes on an element, returns a new element within an entire document.
  */
 public abstract class XmlNode implements walkingkooka.tree.Node<XmlNode, XmlName, XmlAttributeName, String>,
-        HasSearchNode,
         HasXmlNode,
         HasText,
         TraversableHasTextOffset<XmlNode>,
@@ -554,22 +550,6 @@ public abstract class XmlNode implements walkingkooka.tree.Node<XmlNode, XmlName
             }
         }
         return index;
-    }
-
-    // toSearchNode...............................................................................................
-
-    @Override
-    public final SearchNode toSearchNode() {
-        return this.toSearchNode0()
-                .setName(this.searchNodeName());
-    }
-
-    abstract SearchNode toSearchNode0();
-
-    abstract SearchNodeName searchNodeName();
-
-    static SearchNode textSearchNode(final String text) {
-        return SearchNode.text(text, text);
     }
 
     // Object.......................................................................................................

@@ -21,7 +21,6 @@ import org.w3c.dom.Node;
 import org.w3c.dom.Text;
 import walkingkooka.Cast;
 import walkingkooka.ToStringBuilder;
-import walkingkooka.tree.search.SearchNodeName;
 
 /**
  * Represents a text node within a xml document.
@@ -66,12 +65,6 @@ public final class XmlText extends XmlTextNode {
     XmlText wrap0(final Node node) {
         return new XmlText(node);
     }
-
-    @Override SearchNodeName searchNodeName() {
-        return SEARCH_NODE_NAME;
-    }
-
-    final static SearchNodeName SEARCH_NODE_NAME = SearchNodeName.with("Text");
 
     // Object....................................................................................................
 

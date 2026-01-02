@@ -23,7 +23,6 @@ import org.w3c.dom.DocumentType;
 import org.w3c.dom.Entity;
 import walkingkooka.Cast;
 import walkingkooka.test.ResourceTesting;
-import walkingkooka.tree.search.SearchNodeName;
 
 import javax.xml.parsers.DocumentBuilder;
 import java.io.Reader;
@@ -77,11 +76,6 @@ public final class XmlEntityTest extends XmlParentNodeTestCase<XmlEntity>
     @Override
     String text() {
         return "";
-    }
-
-    @Override
-    SearchNodeName searchNodeName() {
-        return SearchNodeName.with("Entity");
     }
 
     @Override

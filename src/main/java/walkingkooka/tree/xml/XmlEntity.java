@@ -21,8 +21,6 @@ import org.w3c.dom.Entity;
 import org.w3c.dom.Node;
 import walkingkooka.Cast;
 import walkingkooka.ToStringBuilder;
-import walkingkooka.tree.search.SearchNode;
-import walkingkooka.tree.search.SearchNodeName;
 
 import java.util.List;
 import java.util.Map;
@@ -161,18 +159,6 @@ final public class XmlEntity extends XmlParentNode2 implements HasXmlPublicId, H
     XmlEntity wrap0(final Node node) {
         return new XmlEntity(node);
     }
-
-    @Override
-    SearchNode toSearchNode0() {
-        return this.toSearchNode1();
-    }
-
-    @Override
-    SearchNodeName searchNodeName() {
-        return SEARCH_NODE_NAME;
-    }
-
-    private final static SearchNodeName SEARCH_NODE_NAME = SearchNodeName.with("Entity");
 
     // Object...................................................................................................
 

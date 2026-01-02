@@ -19,8 +19,6 @@ package walkingkooka.tree.xml;
 
 import org.junit.jupiter.api.Test;
 import org.w3c.dom.Document;
-import walkingkooka.tree.search.SearchNode;
-import walkingkooka.tree.search.SearchNodeName;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -47,13 +45,6 @@ public final class XmlCDataSectionTest extends XmlTextNodeTestCase<XmlCDataSecti
                 IllegalArgumentException.class,
                 () -> this.createNode().setText(XmlCDataSection.CLOSE)
         );
-    }
-
-    // toSearchNode.....................................................................................................
-
-    @Test
-    public void testToSearchNode() {
-        this.toSearchNodeAndCheck(SearchNode.text(TEXT, TEXT).setName(SearchNodeName.with("CData")));
     }
 
     // toString.....................................................................................................

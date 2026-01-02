@@ -23,16 +23,12 @@ import org.w3c.dom.Node;
 import walkingkooka.Cast;
 import walkingkooka.ToStringBuilder;
 import walkingkooka.ToStringBuilderOption;
-import walkingkooka.tree.search.SearchNode;
-import walkingkooka.tree.search.SearchNodeAttributeName;
-import walkingkooka.tree.search.SearchNodeName;
 
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Objects;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 /**
  * An immutable element.
@@ -171,24 +167,6 @@ public final class XmlElement extends XmlParentNode2 implements HasXmlNameSpaceP
     @Override
     XmlElement wrap0(final Node node) {
         return new XmlElement(node);
-    }
-
-    @Override SearchNode toSearchNode0() {
-        return this.toSearchNode1().setAttributes(
-                this.attributes().entrySet()
-                        .stream()
-                        .collect(
-                                Collectors.toMap(
-                                        e -> SearchNodeAttributeName.with(e.getKey().value()),
-                                        Entry::getValue
-                                )
-                        )
-        );
-    }
-
-    @Override
-    SearchNodeName searchNodeName() {
-        return SearchNodeName.with(this.name().value());
     }
 
     // Object................................................................................................

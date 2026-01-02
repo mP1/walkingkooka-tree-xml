@@ -19,16 +19,13 @@ package walkingkooka.tree.xml;
 
 import walkingkooka.Value;
 import walkingkooka.text.CharSequences;
-import walkingkooka.tree.search.HasSearchNode;
-import walkingkooka.tree.search.SearchNode;
 
 import java.util.Optional;
 
 /**
  * A {@link Value} which is a system id
  */
-final public class XmlSystemId implements Value<String>,
-        HasSearchNode {
+final public class XmlSystemId implements Value<String> {
 
     /**
      * Constant that may be used when no system id is present.
@@ -57,13 +54,6 @@ final public class XmlSystemId implements Value<String>,
     }
 
     private final String value;
-
-    // toSearchNode...............................................................................................
-
-    @Override
-    public SearchNode toSearchNode() {
-        return SearchNode.text(this.value, this.value);
-    }
 
     // Object..................................................................................................
 

@@ -20,10 +20,7 @@ package walkingkooka.tree.xml;
 import org.junit.jupiter.api.Test;
 import org.w3c.dom.Document;
 import org.w3c.dom.DocumentType;
-import walkingkooka.collect.list.Lists;
 import walkingkooka.collect.map.Maps;
-import walkingkooka.tree.search.SearchNode;
-import walkingkooka.tree.search.SearchNodeName;
 
 import javax.xml.parsers.DocumentBuilder;
 import java.lang.reflect.Method;
@@ -136,18 +133,6 @@ public final class XmlDocumentTypeTest extends XmlLeafNodeTestCase<XmlDocumentTy
         return name.equals("document") ||
                 name.equals("internalSubset") ||
                 name.equals("parentOrFail");
-    }
-
-    // toSearchNode.....................................................................................................
-
-    @Test
-    public void testToSearchNode() {
-        final XmlDocumentType documentType = this.createNode();
-        this.toSearchNodeAndCheck(documentType,
-                SearchNode.sequence(Lists.of(
-                        documentType.publicId().get().toSearchNode(),
-                        documentType.systemId().get().toSearchNode()
-                )).setName(SearchNodeName.with("DocType")));
     }
 
     // HashCodeEqualsDefined.....................................................................................................

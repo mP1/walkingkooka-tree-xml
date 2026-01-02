@@ -17,10 +17,6 @@
 
 package walkingkooka.tree.xml;
 
-import org.junit.jupiter.api.Test;
-import walkingkooka.tree.search.SearchNode;
-import walkingkooka.tree.search.SearchNodeName;
-
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertSame;
@@ -30,17 +26,6 @@ public abstract class XmlParentNodeTestCase<N extends XmlParentNode> extends Xml
     XmlParentNodeTestCase() {
         super();
     }
-
-    // toSearchNode.....................................................................................................
-
-    @Test
-    public final void testToSearchNodeWithoutChildren() {
-        final N domNode = this.createNode();
-        this.checkChildren("children", 0, domNode);
-        this.toSearchNodeAndCheck(domNode, SearchNode.text("", "").setName(this.searchNodeName()));
-    }
-
-    abstract SearchNodeName searchNodeName();
 
     // toString.....................................................................................................
 

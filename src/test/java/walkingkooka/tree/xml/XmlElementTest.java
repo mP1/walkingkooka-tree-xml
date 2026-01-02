@@ -24,9 +24,6 @@ import org.w3c.dom.NamedNodeMap;
 import walkingkooka.Cast;
 import walkingkooka.collect.list.Lists;
 import walkingkooka.collect.map.Maps;
-import walkingkooka.tree.search.SearchNode;
-import walkingkooka.tree.search.SearchNodeAttributeName;
-import walkingkooka.tree.search.SearchNodeName;
 
 import javax.xml.parsers.DocumentBuilder;
 import java.util.Map;
@@ -391,32 +388,6 @@ public final class XmlElementTest extends XmlParentNodeTestCase<XmlElement> {
         this.checkNotEquals(XmlElement.with(element), XmlElement.with(element2));
     }
 
-    // toSearchNode.....................................................................................................
-
-    @Test
-    public void testToSearchNodeWithChildren() {
-        final XmlElement parent = this.createNode();
-        final XmlElement child = parent.createElement(XmlName.element("child1"));
-        final XmlElement parent2 = parent.appendChild(child);
-
-        this.toSearchNodeAndCheck(parent2,
-                SearchNode.sequence(Lists.of(
-                                child.toSearchNode()))
-
-                        .setName(SearchNodeName.with(PARENT.value())));
-    }
-
-    @Test
-    public void testToSearchNodeWithAttributes() {
-        final XmlElement element = this.createNode()
-                .setAttributes(ATTRIBUTES_1);
-
-        this.toSearchNodeAndCheck(element,
-                SearchNode.text("", "")
-                        .setAttributes(Maps.of(SearchNodeAttributeName.with(ATTRIBUTE_NAME1.value()), ATTRIBUTE_VALUE1))
-                        .setName(SearchNodeName.with(PARENT.value())));
-    }
-
     // toString.....................................................................................................
 
     @Test
@@ -494,11 +465,6 @@ public final class XmlElementTest extends XmlParentNodeTestCase<XmlElement> {
     @Override
     String text() {
         return "";
-    }
-
-    @Override
-    SearchNodeName searchNodeName() {
-        return SearchNodeName.with(PARENT.value());
     }
 
     @Override

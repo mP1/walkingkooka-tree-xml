@@ -19,10 +19,7 @@ package walkingkooka.tree.xml;
 
 import org.junit.jupiter.api.Test;
 import org.w3c.dom.Document;
-import walkingkooka.collect.list.Lists;
 import walkingkooka.test.ResourceTesting;
-import walkingkooka.tree.search.SearchNode;
-import walkingkooka.tree.search.SearchNodeName;
 
 import javax.xml.parsers.DocumentBuilder;
 import java.io.Reader;
@@ -49,19 +46,6 @@ public final class XmlNotationTest extends XmlLeafNodeTestCase<XmlNotation>
         } catch (final Exception rethrow) {
             throw new Error(rethrow);
         }
-    }
-
-    // toSearchNode.....................................................................................................
-
-    @Test
-    public void testToSearchNode() {
-        final XmlNotation notation = this.createNode();
-        final String zipViewer = "zip viewer";
-
-        this.toSearchNodeAndCheck(notation,
-                SearchNode.sequence(Lists.of(
-                        SearchNode.text(zipViewer, zipViewer)
-                )).setName(SearchNodeName.with("Notation")));
     }
 
     // toString.....................................................................................................
