@@ -20,8 +20,8 @@ package walkingkooka.tree.xml;
 import org.w3c.dom.Node;
 import org.w3c.dom.ProcessingInstruction;
 import walkingkooka.Cast;
+import walkingkooka.HasValue;
 import walkingkooka.ToStringBuilder;
-import walkingkooka.Value;
 
 import java.util.Objects;
 
@@ -33,7 +33,7 @@ import java.util.Objects;
  * </pre>
  */
 @SuppressWarnings("lgtm[java/inconsistent-equals-and-hashcode]")
-final public class XmlProcessingInstruction extends XmlLeafNode implements Value<String> {
+final public class XmlProcessingInstruction extends XmlLeafNode implements HasValue<String> {
 
     private final static String START = "<?";
     private final static String END = "?>";

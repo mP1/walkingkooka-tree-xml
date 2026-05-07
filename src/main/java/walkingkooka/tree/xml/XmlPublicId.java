@@ -17,7 +17,7 @@
 
 package walkingkooka.tree.xml;
 
-import walkingkooka.Value;
+import walkingkooka.HasValue;
 import walkingkooka.text.CharSequences;
 
 import java.util.Optional;
@@ -25,7 +25,7 @@ import java.util.Optional;
 /**
  * A {@link Value} which is a public id
  */
-final public class XmlPublicId implements Value<String> {
+final public class XmlPublicId implements HasValue<String> {
 
     /**
      * Constant that may be used when no public id is present.

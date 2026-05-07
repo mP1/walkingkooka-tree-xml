@@ -17,7 +17,7 @@
 
 package walkingkooka.tree.xml;
 
-import walkingkooka.Value;
+import walkingkooka.HasValue;
 import walkingkooka.text.CharSequences;
 
 import java.util.Optional;
@@ -25,7 +25,7 @@ import java.util.Optional;
 /**
  * A {@link Value} which is a system id
  */
-final public class XmlSystemId implements Value<String> {
+final public class XmlSystemId implements HasValue<String> {
 
     /**
      * Constant that may be used when no system id is present.

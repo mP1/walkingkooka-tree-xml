@@ -20,10 +20,10 @@ package walkingkooka.tree.xml;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
+import walkingkooka.HasValue;
 import walkingkooka.ToStringBuilder;
 import walkingkooka.ToStringBuilderOption;
 import walkingkooka.UsesToStringBuilder;
-import walkingkooka.Value;
 import walkingkooka.naming.Name;
 import walkingkooka.text.CharacterConstant;
 
@@ -32,7 +32,7 @@ import java.util.Optional;
 /**
  * The prefix component of a namespace.
  */
-final public class XmlNameSpacePrefix implements Value<String>, UsesToStringBuilder {
+final public class XmlNameSpacePrefix implements HasValue<String>, UsesToStringBuilder {
 
     /**
      * The separator character between a prefix and attribute.
