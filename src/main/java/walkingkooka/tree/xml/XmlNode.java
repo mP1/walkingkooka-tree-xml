@@ -33,6 +33,7 @@ import walkingkooka.text.HasText;
 import walkingkooka.text.Whitespace;
 import walkingkooka.tree.TraversableHasTextOffset;
 import walkingkooka.tree.expression.ExpressionFunctionName;
+import walkingkooka.tree.expression.HasExpressionNumberKind;
 import walkingkooka.tree.select.NodeSelector;
 import walkingkooka.tree.select.parser.ExpressionNodeSelectorParserToken;
 
@@ -633,10 +634,14 @@ public abstract class XmlNode implements walkingkooka.tree.Node<XmlNode, XmlName
      * Creates a {@link NodeSelector} for {@link XmlNode} from a {@link ExpressionNodeSelectorParserToken}.
      */
     public static NodeSelector<XmlNode, XmlName, XmlAttributeName, String> nodeSelectorExpressionParserToken(final ExpressionNodeSelectorParserToken token,
-                                                                                                             final Predicate<ExpressionFunctionName> functions) {
-        return NodeSelector.parserToken(token,
+                                                                                                             final Predicate<ExpressionFunctionName> functions,
+                                                                                                             final HasExpressionNumberKind hasExpressionNumberKind) {
+        return NodeSelector.parserToken(
+                token,
                 n -> XmlName.element(n.value()),
                 functions,
-                XmlNode.class);
+                hasExpressionNumberKind,
+                XmlNode.class
+        );
     }
 }
