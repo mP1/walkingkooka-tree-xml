@@ -44,7 +44,7 @@ public final class XmlNodeChildListTest implements PackagePrivateClassTesting<Xm
     }
 
     private XmlNodeChildList createList(final String... elements) {
-        final Document document = this.documentBuider().newDocument();
+        final Document document = this.documentBuilder().newDocument();
         final Element root = document.createElement("root");
         for (String child : elements) {
             root.appendChild(document.createElement(child));
@@ -52,7 +52,7 @@ public final class XmlNodeChildListTest implements PackagePrivateClassTesting<Xm
         return Cast.to(XmlDocument.wrap(root).children());
     }
 
-    private DocumentBuilder documentBuider() {
+    private DocumentBuilder documentBuilder() {
         try {
             final DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             factory.setNamespaceAware(false);
