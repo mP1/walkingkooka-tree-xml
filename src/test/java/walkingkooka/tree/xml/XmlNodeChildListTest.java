@@ -35,6 +35,11 @@ public final class XmlNodeChildListTest implements ClassTesting2<XmlNodeChildLis
     private final static String C3 = "C3";
 
     @Override
+    public void testReversed() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
     public XmlNodeChildList createList() {
         return this.createList(A1, B2, C3);
     }
