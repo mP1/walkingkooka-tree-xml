@@ -21,13 +21,12 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import walkingkooka.Cast;
 import walkingkooka.collect.list.ImmutableListTesting;
-import walkingkooka.reflect.ClassTesting2;
-import walkingkooka.reflect.JavaVisibility;
+import walkingkooka.reflect.PackagePrivateClassTesting;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
-public final class XmlNodeChildListTest implements ClassTesting2<XmlNodeChildList>,
+public final class XmlNodeChildListTest implements PackagePrivateClassTesting<XmlNodeChildList>,
         ImmutableListTesting<XmlNodeChildList, XmlNode> {
 
     private final static String A1 = "A1";
@@ -68,11 +67,6 @@ public final class XmlNodeChildListTest implements ClassTesting2<XmlNodeChildLis
     @Override
     public Class<XmlNodeChildList> type() {
         return XmlNodeChildList.class;
-    }
-
-    @Override
-    public JavaVisibility typeVisibility() {
-        return JavaVisibility.PACKAGE_PRIVATE;
     }
 }
 
